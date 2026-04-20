@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal IA - Inicio</title>
+    <script>
+    // GUARDIÁN DE RUTA: Si no hay token, lo expulsa al inicio
+    if (!sessionStorage.getItem('token_google_ia')) {
+        window.location.replace('index.html');
+    }
+    </script>
     <style>
         :root {
             --verde-primario: #00CB75; /* El vibrante de tu paleta */
