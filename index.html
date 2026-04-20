@@ -12,5 +12,64 @@
     <script src="assets/js/chatbot.js"></script>
 </head>
 <body>
-   </body>
+
+<div id="pantalla-login">
+    <h1>IA AUTOMATIZA</h1>
+    <p>Portal Interno. Inicia sesión para continuar.</p>
+    <div id="g_id_onload" data-client_id="1825248631-jl7lqotac3ohmlcf71gtki9mop3a0b9l.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-callback="manejarLoginGoogle" data-auto_prompt="false"></div>
+    <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
+</div>
+
+<div id="contenido-portal">
+    <nav>
+        <a href="index.html" class="logo">IA AUTOMATIZA</a>
+        <div>
+            <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;"></span>
+            <a href="index.html">Inicio</a>
+            <a href="herramientas.html">Herramientas</a>
+            <a href="cursos.html">Cursos</a>
+            <button class="btn-logout" onclick="cerrarSesion()">[ Salir ]</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Automatiza tu Flujo de Trabajo con IA</h1>
+        <p>La plataforma centralizada para potenciar la eficiencia interna mediante inteligencia artificial.</p>
+        <a href="cursos.html" class="btn-principal">Empezar a Aprender ahora</a>
+    </section>
+
+    <div class="content">
+        <h2>¿Por qué automatizar hoy?</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Ahorro de Tiempo</h3>
+                <p>Delegue tareas repetitivas a la IA y enfóquese en lo que genera valor real.</p>
+            </div>
+            <div class="card">
+                <h3>Escalabilidad</h3>
+                <p>Procesos que crecen sin necesidad de aumentar la carga operativa manual.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 Portal de IA Interno</footer>
+
+    <button id="btn-abrir-chat" onclick="toggleChat()">💬 Consultar IA</button>
+
+    <div id="chatbot-flotante">
+        <div id="chat-header">
+            <span>🤖 Asistente IA</span>
+            <button id="btn-cerrar-chat" onclick="toggleChat()">✖</button>
+        </div>
+        <div id="caja-mensajes">
+            <div class="mensaje mensaje-bot">¡Hola! Dime qué tarea de tu día quieres automatizar y te orientaré hacia el recurso adecuado.</div>
+        </div>
+        <div class="input-area">
+            <input type="text" id="input-mensaje" placeholder="Escribe tu consulta..." onkeypress="manejarEnter(event)">
+            <button id="btn-enviar" onclick="enviarMensaje()">Enviar</button>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
