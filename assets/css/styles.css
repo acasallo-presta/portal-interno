@@ -353,3 +353,12 @@ footer {
     margin-right: 15px; 
     flex-shrink: 0; 
 }
+
+
+/* Caja de notas importantes en los cursos */
+.teoria-box { 
+    background: var(--gris-suave); 
+    padding: 15px; 
+    border-left: 4px solid var(--verde-oscuro); 
+    margin: 20px 0; 
+}
