@@ -362,3 +362,18 @@ footer {
     border-left: 4px solid var(--verde-oscuro); 
     margin: 20px 0; 
 }
+
+.card-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+    margin-top: 30px; 
+}
+
+.card { 
+    background: white; 
+    padding: 30px; 
+    border-radius: 15px; 
+    border-bottom: 4px solid var(--verde-primario); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+}
