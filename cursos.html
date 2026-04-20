@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal IA - Menú de Cursos</title>
+    <style>
+        :root {
+            --verde-primario: #00CB75; 
+            --verde-oscuro: #003F27;
+            --verde-medio: #007B4B;
+            --verde-claro: #E6FFF4;
+            --blanco: #ffffff;
+            --gris-suave: #f8f9fa;
+        }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--gris-suave); color: var(--verde-oscuro); line-height: 1.6; }
+        nav { background: var(--verde-oscuro); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--verde-primario); }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--verde-primario); }
+        
+        .header-seccion { background: var(--verde-medio); color: white; padding: 40px 10%; text-align: center; }
+        .content { padding: 50px 10%; max-width: 900px; margin: auto; }
+        
+        .curso-item { background: white; padding: 25px; border-radius: 10px; border-left: 6px solid var(--verde-primario); margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .curso-info h3 { margin: 0 0 10px 0; color: var(--verde-oscuro); }
+        .curso-info p { margin: 0; color: #555; }
+        .btn-curso { background: var(--verde-primario); color: var(--verde-oscuro); text-decoration: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        .btn-curso:hover { background: var(--verde-oscuro); color: white; }
+        
+        footer { background: #eee; text-align: center; padding: 20px; margin-top: 50px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
 
+<nav>
+    <div class="logo">IA AUTOMATIZA</div>
+    <div>
+        <a href="index.html">Inicio</a>
+        <a href="herramientas.html">Herramientas</a>
+        <a href="cursos.html">Cursos</a>
+    </div>
+</nav>
+
+<div class="header-seccion">
+    <h1>Catálogo de Cursos Internos</h1>
+    <p>Selecciona un módulo para empezar a aprender cómo optimizar tu tiempo.</p>
+</div>
+
+<div class="content">
+    <div class="curso-item">
+        <div class="curso-info">
+            <h3>Módulo 1: Empezar a Automatizar</h3>
+            <p>Curso inicial introductorio sobre los conceptos básicos de la automatización y la Inteligencia Artificial.</p>
+        </div>
+        <a href="curso-introductorio.html" class="btn-curso">Ver Curso</a>
+    </div>
+
+    <div class="curso-item">
+        <div class="curso-info">
+            <h3>Módulo 2: Notificaciones y Correos</h3>
+            <p>Pasos para automatizar envíos de correos y conectar alertas directamente en Google Chat.</p>
+        </div>
+        <a href="curso-notificaciones.html" class="btn-curso">Ver Curso</a>
+    </div>
+</div>
+
+<footer>&copy; 2026 Portal de IA Interno - Fase 1</footer>
+
+</body>
+</html>
