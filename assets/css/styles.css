@@ -250,3 +250,50 @@ footer {
     cursor: pointer; 
     font-weight: bold; 
 }
+
+/* =========================================
+   ESTILOS ESPECÍFICOS DE LAS SUBPÁGINAS
+   ========================================= */
+.header-seccion { 
+    background: var(--verde-medio); 
+    color: white; 
+    padding: 40px 10%; 
+    text-align: center; 
+}
+
+.curso-item { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 10px; 
+    border-left: 6px solid var(--verde-primario); 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.curso-info h3 { 
+    margin: 0 0 10px 0; 
+    color: var(--verde-oscuro); 
+}
+
+.curso-info p { 
+    margin: 0; 
+    color: #555; 
+}
+
+.btn-curso { 
+    background: var(--verde-primario); 
+    color: var(--verde-oscuro); 
+    text-decoration: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    transition: 0.3s; 
+}
+
+.btn-curso:hover { 
+    background: var(--verde-oscuro); 
+    color: white; 
+}
