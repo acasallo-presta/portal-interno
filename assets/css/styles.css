@@ -297,3 +297,59 @@ footer {
     background: var(--verde-oscuro); 
     color: white; 
 }
+
+/* =========================================
+   ESTILOS DE LOS ARTÍCULOS (Módulos de Cursos)
+   ========================================= */
+.articulo-curso { 
+    max-width: 800px; 
+    margin: 40px auto; 
+    background: white; 
+    padding: 40px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+}
+
+.articulo-curso h1 { 
+    color: var(--verde-oscuro); 
+    border-bottom: 2px solid var(--verde-primario); 
+    padding-bottom: 10px; 
+}
+
+.articulo-curso h2 { 
+    color: var(--verde-oscuro); 
+    margin-top: 30px; 
+}
+
+.volver { 
+    display: inline-block; 
+    margin-bottom: 20px; 
+    color: var(--verde-oscuro); 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: 0.3s;
+}
+
+.volver:hover { 
+    color: var(--verde-primario); 
+}
+
+/* Diseño de los números y pasos */
+.paso { 
+    display: flex; 
+    margin-top: 20px; 
+}
+
+.paso-num { 
+    background: var(--verde-primario); 
+    color: var(--verde-oscuro); 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-weight: bold; 
+    margin-right: 15px; 
+    flex-shrink: 0; 
+}
