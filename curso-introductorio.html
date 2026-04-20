@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1 - Introducción a la Automatización</title>
+    <style>
+        :root {
+            --verde-primario: #00CB75; 
+            --verde-oscuro: #003F27;
+            --blanco: #ffffff;
+            --gris-suave: #f8f9fa;
+        }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--gris-suave); color: #333; line-height: 1.7; }
+        nav { background: var(--verde-oscuro); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--verde-primario); }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--verde-primario); }
+        
+        .content { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { color: var(--verde-oscuro); border-bottom: 2px solid var(--verde-primario); padding-bottom: 10px; }
+        h2 { color: var(--verde-oscuro); margin-top: 30px; }
+        .volver { display: inline-block; margin-bottom: 20px; color: var(--verde-oscuro); text-decoration: none; font-weight: bold; }
+        .volver:hover { color: var(--verde-primario); }
+        
+        .teoria-box { background: var(--gris-suave); padding: 15px; border-left: 4px solid var(--verde-oscuro); margin: 20px 0; }
+    </style>
+</head>
+<body>
 
+<nav>
+    <div class="logo">IA AUTOMATIZA</div>
+    <div>
+        <a href="index.html">Inicio</a>
+        <a href="herramientas.html">Herramientas</a>
+        <a href="cursos.html">Cursos</a>
+    </div>
+</nav>
+
+<div class="content">
+    <a href="cursos.html" class="volver">← Volver al Catálogo</a>
+    
+    <h1>Empezar a Automatizar (Nivel Básico)</h1>
+    
+    <h2>¿Qué es la automatización de procesos?</h2>
+    <p>La automatización consiste en usar la tecnología para realizar tareas repetitivas con la mínima intervención humana. En nuestra empresa, el objetivo no es reemplazar el trabajo humano, sino liberarlo de tareas mecánicas para enfocarnos en la estrategia y la creatividad.</p>
+
+    <div class="teoria-box">
+        <strong>Concepto Clave para la IA:</strong> Un "Trigger" (Disparador) es el evento que inicia la automatización (ej. "Cuando llega un correo"), y una "Action" (Acción) es lo que hace el sistema en respuesta (ej. "Guardar el archivo en Drive").
+    </div>
+
+    <h2>¿Por dónde empezar?</h2>
+    <ul>
+        <li><strong>Identifica el dolor:</strong> Anota qué tareas te toman más de 30 minutos al día copiando y pegando datos.</li>
+        <li><strong>Estandariza:</strong> Una IA o un bot no puede automatizar el desorden. Asegúrate de que el proceso siempre se haga igual antes de automatizarlo.</li>
+        <li><strong>Elige la herramienta:</strong> Usaremos principalmente nuestro ecosistema interno y conectores web.</li>
+    </ul>
+</div>
+
+</body>
+</html>
