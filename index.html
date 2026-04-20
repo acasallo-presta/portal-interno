@@ -7,57 +7,27 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     
     <style>
-        :root {
-            --verde-primario: #00CB75;
-            --verde-oscuro: #003F27;
-            --verde-medio: #007B4B;
-            --verde-claro: #E6FFF4;
-            --blanco: #ffffff;
-            --gris-suave: #f8f9fa;
-        }
-
+        :root { --verde-primario: #00CB75; --verde-oscuro: #003F27; --verde-medio: #007B4B; --verde-claro: #E6FFF4; --blanco: #ffffff; --gris-suave: #f8f9fa; }
         body { font-family: 'Inter', sans-serif; margin: 0; background: var(--gris-suave); color: var(--verde-oscuro); line-height: 1.6; }
 
-        /* =========================================
-           PANTALLA DE LOGIN
-           ========================================= */
-        #pantalla-login {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: var(--verde-oscuro);
-            color: white;
-            text-align: center;
-        }
-
+        /* PANTALLA DE LOGIN */
+        #pantalla-login { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: var(--verde-oscuro); color: white; text-align: center; }
         #pantalla-login h1 { color: var(--verde-primario); margin-bottom: 10px; font-size: 2.5rem; }
         #pantalla-login p { margin-bottom: 30px; font-size: 1.1rem; opacity: 0.9; }
 
-        /* =========================================
-           CONTENIDO DEL PORTAL (Oculto al inicio)
-           ========================================= */
-        #contenido-portal {
-            display: none; /* Se oculta hasta que inicie sesión */
-        }
-
-        /* Navegación */
+        /* CONTENIDO DEL PORTAL */
+        #contenido-portal { display: none; }
         nav { background: var(--verde-oscuro); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
-        nav a:hover { color: var(--verde-primario); }
+        nav a, .btn-logout { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; cursor: pointer; background: none; border: none; font-size: 1rem; font-family: inherit; }
+        nav a:hover, .btn-logout:hover { color: var(--verde-primario); }
         .logo { font-weight: 800; font-size: 1.4rem; color: var(--verde-primario); text-decoration: none; }
 
-        /* Hero Section */
         .hero { background: var(--verde-oscuro); color: white; padding: 80px 10%; text-align: center; }
         .btn-principal { background: var(--verde-primario); color: var(--verde-oscuro); padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; transition: transform 0.2s; }
         .btn-principal:hover { transform: scale(1.05); background: var(--verde-claro); }
-
-        /* Contenedores */
         .content { padding: 50px 10%; }
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
         .card { background: white; padding: 30px; border-radius: 15px; border-bottom: 4px solid var(--verde-primario); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        
         footer { background: #eee; text-align: center; padding: 20px; margin-top: 50px; font-size: 0.9rem; }
 
         /* CHATBOT */
@@ -79,33 +49,19 @@
 <div id="pantalla-login">
     <h1>IA AUTOMATIZA</h1>
     <p>Portal Interno. Inicia sesión para continuar.</p>
-    
-    <div id="g_id_onload"
-         data-client_id="1825248631-jl7lqotac3ohmlcf71gtki9mop3a0b9l.apps.googleusercontent.com"
-         data-context="signin"
-         data-ux_mode="popup"
-         data-callback="manejarLoginGoogle"
-         data-auto_prompt="false">
-    </div>
-
-    <div class="g_id_signin"
-         data-type="standard"
-         data-shape="rectangular"
-         data-theme="outline"
-         data-text="signin_with"
-         data-size="large"
-         data-logo_alignment="left">
-    </div>
+    <div id="g_id_onload" data-client_id="1825248631-jl7lqotac3ohmlcf71gtki9mop3a0b9l.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-callback="manejarLoginGoogle" data-auto_prompt="false"></div>
+    <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline" data-text="signin_with" data-size="large" data-logo_alignment="left"></div>
 </div>
 
 <div id="contenido-portal">
     <nav>
         <a href="index.html" class="logo">IA AUTOMATIZA</a>
         <div>
-            <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 20px; font-size: 0.9rem;"></span>
+            <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;"></span>
             <a href="index.html">Inicio</a>
             <a href="herramientas.html">Herramientas</a>
             <a href="cursos.html">Cursos</a>
+            <button class="btn-logout" onclick="cerrarSesion()">[ Salir ]</button>
         </div>
     </nav>
 
@@ -131,9 +87,7 @@
 
     <footer>&copy; 2026 Portal de IA Interno</footer>
 
-    <button id="btn-abrir-chat" onclick="toggleChat()">
-        💬 Consultar IA
-    </button>
+    <button id="btn-abrir-chat" onclick="toggleChat()">💬 Consultar IA</button>
 
     <div id="chatbot-flotante">
         <div id="chat-header">
@@ -151,40 +105,46 @@
 </div>
 
 <script>
-    // ==========================================
-    // LÓGICA DE LOGIN CON GOOGLE
-    // ==========================================
+    // --- NUEVO: AUTO-LOGIN AL CARGAR LA PÁGINA ---
+    window.onload = function() {
+        const tokenGuardado = sessionStorage.getItem('token_google_ia');
+        if (tokenGuardado) {
+            try {
+                // Leer el nombre del token guardado
+                const payload = JSON.parse(atob(tokenGuardado.split('.')[1]));
+                document.getElementById('nombre-usuario').innerText = "Hola, " + payload.name;
+                // Mostrar portal directamente
+                document.getElementById('pantalla-login').style.display = 'none';
+                document.getElementById('contenido-portal').style.display = 'block';
+            } catch(e) {
+                // Si el token está corrupto, lo borramos
+                sessionStorage.removeItem('token_google_ia');
+            }
+        }
+    };
+
     function manejarLoginGoogle(response) {
-        // Obtenemos el Token (JWT) que Google nos devuelve
         const token = response.credential;
-        
-        // Decodificamos el token para leer los datos del usuario (email, nombre)
         const payload = JSON.parse(atob(token.split('.')[1]));
         const emailUsuario = payload.email;
-        const nombreUsuario = payload.name;
 
-        // Validamos que el correo sea corporativo (Capa extra de seguridad Frontend)
         if(emailUsuario.endsWith('@prestamype.com') || emailUsuario.endsWith('@cambioseguro.com')) {
-            
-            // 1. Guardamos el token en la memoria del navegador para dárselo al Chatbot luego
             sessionStorage.setItem('token_google_ia', token);
-            
-            // 2. Ocultamos el Login y mostramos el Portal
             document.getElementById('pantalla-login').style.display = 'none';
             document.getElementById('contenido-portal').style.display = 'block';
-            
-            // 3. Mostramos el nombre del usuario en el menú
-            document.getElementById('nombre-usuario').innerText = "Hola, " + nombreUsuario;
-            
+            document.getElementById('nombre-usuario').innerText = "Hola, " + payload.name;
         } else {
-            // Si intenta entrar alguien con un Gmail personal o de otra empresa
-            alert("Acceso denegado. Por favor, usa un correo corporativo de Prestamype o Cambio Seguro.");
+            alert("Acceso denegado. Usa un correo de Prestamype o Cambio Seguro.");
         }
     }
 
-    // ==========================================
-    // LÓGICA DEL CHATBOT
-    // ==========================================
+    // --- NUEVO: FUNCIÓN PARA CERRAR SESIÓN ---
+    function cerrarSesion() {
+        sessionStorage.removeItem('token_google_ia'); // Borramos la memoria
+        location.reload(); // Recargamos la página para volver al login
+    }
+
+    // Lógica del Chatbot
     function toggleChat() {
         const ventanaChat = document.getElementById('chatbot-flotante');
         ventanaChat.style.display = (ventanaChat.style.display === 'none' || ventanaChat.style.display === '') ? 'flex' : 'none';
@@ -204,37 +164,25 @@
         caja.scrollTop = caja.scrollHeight;
 
         try {
-            // *** REEMPLAZA ESTA URL CON LA DE TU WORKER DE CLOUDFLARE ***
             const URL_WORKER = "https://TU_URL_DE_CLOUDFLARE_AQUI.workers.dev/";
-            
-            // Recuperamos el token de Google para enviarlo como "llave" a Cloudflare
             const tokenGuardado = sessionStorage.getItem('token_google_ia');
 
             const respuesta = await fetch(URL_WORKER, {
                 method: "POST",
-                headers: { 
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer " + tokenGuardado // <-- Aquí enviamos el pase de seguridad
-                },
+                headers: { "Content-Type": "application/json", "Authorization": "Bearer " + tokenGuardado },
                 body: JSON.stringify({ mensaje: texto })
             });
 
             const datos = await respuesta.json();
             document.getElementById(idPensando).remove();
-            
             caja.innerHTML += `<div class="mensaje mensaje-bot">${datos.respuesta}</div>`;
             caja.scrollTop = caja.scrollHeight;
-
         } catch (error) {
-            if(document.getElementById(idPensando)) {
-                document.getElementById(idPensando).innerHTML = "Error de conexión o token inválido.";
-            }
+            if(document.getElementById(idPensando)) document.getElementById(idPensando).innerHTML = "Error de conexión.";
         }
     }
 
-    function manejarEnter(event) {
-        if (event.key === 'Enter') enviarMensaje();
-    }
+    function manejarEnter(event) { if (event.key === 'Enter') enviarMensaje(); }
 </script>
 
 </body>
