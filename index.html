@@ -3,226 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Interno IA</title>
+    <title>Portal IA - Inicio</title>
     <style>
-        /* Paleta de colores aplicada */
         :root {
-            --verde-primario: #00CB75;
+            --verde-primario: #00CB75; /* El vibrante de tu paleta */
             --verde-oscuro: #003F27;
             --verde-medio: #007B4B;
             --verde-claro: #E6FFF4;
-            --verde-hover: #00975B;
+            --blanco: #ffffff;
+            --gris-suave: #f8f9fa;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--gris-suave); color: var(--verde-oscuro); line-height: 1.6; }
 
-        /* Barra de navegación */
-        header {
-            background-color: var(--verde-oscuro);
-            color: white;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        /* Navegación Escalable */
+        nav { background: var(--verde-oscuro); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--verde-primario); }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--verde-primario); }
 
-        /* Contenido Principal */
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
+        /* Hero Section */
+        .hero { background: var(--verde-oscuro); color: white; padding: 80px 10%; text-align: center; }
+        .btn-principal { background: var(--verde-primario); color: var(--verde-oscuro); padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; transition: transform 0.2s; }
+        .btn-principal:hover { transform: scale(1.05); background: var(--verde-claro); }
 
-        h1, h2 { color: var(--verde-oscuro); }
-
-        /* Tarjetas de cursos de ejemplo */
-        .grid-cursos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .tarjeta-curso {
-            background: var(--verde-claro);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 5px solid var(--verde-primario);
-        }
-
-        /* ----- ESTILOS DEL CHATBOT ----- */
-        #chatbot-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 350px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            border: 1px solid #ddd;
-        }
-
-        #chatbot-header {
-            background-color: var(--verde-primario);
-            color: var(--verde-oscuro);
-            padding: 15px;
-            font-weight: bold;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-
-        #caja-mensajes {
-            height: 350px;
-            overflow-y: auto;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background-color: #fafafa;
-        }
-
-        .mensaje {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 15px;
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
-
-        .mensaje-bot {
-            background-color: var(--verde-claro);
-            color: var(--verde-oscuro);
-            align-self: flex-start;
-            border-bottom-left-radius: 2px;
-        }
-
-        .mensaje-usuario {
-            background-color: var(--verde-medio);
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-        }
-
-        .input-area {
-            display: flex;
-            padding: 10px;
-            background: white;
-            border-top: 1px solid #eee;
-        }
-
-        #input-mensaje {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            outline: none;
-        }
-
-        #input-mensaje:focus { border-color: var(--verde-primario); }
-
-        #btn-enviar {
-            background-color: var(--verde-primario);
-            color: var(--verde-oscuro);
-            border: none;
-            padding: 10px 20px;
-            margin-left: 10px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        #btn-enviar:hover { background-color: var(--verde-hover); color: white; }
+        /* Contenedores */
+        .content { padding: 50px 10%; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { background: white; padding: 30px; border-radius: 15px; border-bottom: 4px solid var(--verde-primario); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        footer { background: #eee; text-align: center; padding: 20px; margin-top: 50px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h2>Portal de Automatización IA</h2>
-        <nav>Recursos Internos</nav>
-    </header>
+<nav>
+    <div class="logo">IA AUTOMATIZA</div>
+    <div>
+        <a href="index.html">Inicio</a>
+        <a href="herramientas.html">Herramientas</a>
+        <a href="cursos.html">Cursos</a>
+    </div>
+</nav>
 
-    <div class="container">
-        <h1>Bienvenido a tu Autogestión</h1>
-        <p>Utiliza nuestra plataforma para encontrar la automatización ideal para tus tareas diarias. Si no sabes por dónde empezar, pregúntale a nuestro asistente virtual.</p>
+<section class="hero">
+    <h1>Automatiza tu Flujo de Trabajo con IA</h1>
+    <p>La plataforma centralizada para potenciar la eficiencia interna mediante inteligencia artificial.</p>
+    <a href="cursos.html" class="btn-principal">Empezar a Aprender ahora</a>
+</section>
 
-        <div class="grid-cursos">
-            <div class="tarjeta-curso">
-                <h3>Automatización de Correos</h3>
-                <p>Aprende a responder emails automáticamente.</p>
-            </div>
-            <div class="tarjeta-curso">
-                <h3>Análisis con Excel IA</h3>
-                <p>Optimiza tus reportes financieros en segundos.</p>
-            </div>
+<div class="content">
+    <h2>¿Por qué automatizar hoy?</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Ahorro de Tiempo</h3>
+            <p>Delegue tareas repetitivas a la IA y enfóquese en lo que genera valor real.</p>
+        </div>
+        <div class="card">
+            <h3>Escalabilidad</h3>
+            <p>Procesos que crecen sin necesidad de aumentar la carga operativa manual.</p>
         </div>
     </div>
+</div>
 
-    <div id="chatbot-container">
-        <div id="chatbot-header">🤖 Asistente de Cursos IA</div>
-        <div id="caja-mensajes">
-            <div class="mensaje mensaje-bot">¡Hola! Dime qué tarea de tu día quieres automatizar y buscaré el recurso ideal para ti en nuestro portal.</div>
-        </div>
-        <div class="input-area">
-            <input type="text" id="input-mensaje" placeholder="Ej. Quiero automatizar facturas..." onkeypress="manejarEnter(event)">
-            <button id="btn-enviar" onclick="enviarMensaje()">Enviar</button>
-        </div>
-    </div>
-
-    <script>
-        async function enviarMensaje() {
-            const input = document.getElementById('input-mensaje');
-            const caja = document.getElementById('caja-mensajes');
-            const texto = input.value.trim();
-            if (!texto) return;
-
-            // 1. Mostrar mensaje del usuario
-            caja.innerHTML += `<div class="mensaje mensaje-usuario">${texto}</div>`;
-            input.value = '';
-            
-            // 2. Mostrar "Pensando..."
-            const idPensando = "pensando-" + Date.now();
-            caja.innerHTML += `<div id="${idPensando}" class="mensaje mensaje-bot" style="font-style: italic; opacity: 0.7;">Analizando solicitud...</div>`;
-            caja.scrollTop = caja.scrollHeight;
-
-            try {
-                // *** ¡IMPORTANTE! REEMPLAZA ESTA URL CON LA DE TU WORKER DE CLOUDFLARE ***
-                const URL_WORKER = "https://TU_URL_DE_CLOUDFLARE_AQUI.workers.dev/";
-
-                const respuesta = await fetch(URL_WORKER, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ mensaje: texto })
-                });
-
-                const datos = await respuesta.json();
-                document.getElementById(idPensando).remove();
-                
-                // 3. Mostrar respuesta de la IA
-                caja.innerHTML += `<div class="mensaje mensaje-bot">${datos.respuesta}</div>`;
-                caja.scrollTop = caja.scrollHeight;
-
-            } catch (error) {
-                document.getElementById(idPensando).innerHTML = "Error de conexión con el servidor IA.";
-            }
-        }
-
-        function manejarEnter(event) {
-            if (event.key === 'Enter') enviarMensaje();
-        }
-    </script>
+<footer>&copy; 2024 Portal de IA Interno - Fase 1: Plataforma de Conocimiento</footer>
 
 </body>
 </html>
