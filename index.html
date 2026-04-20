@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal IA - Inicio</title>
     
+    <script>
+        // Si detecta la sesión activa antes de dibujar la página, inyecta una clase oculta
+        if (sessionStorage.getItem('token_google_ia')) {
+            document.documentElement.classList.add('sesion-activa');
+        }
+    </script>
+    <style>
+        /* Estas reglas se aplican instantáneamente si la clase anterior se activó */
+        html.sesion-activa #pantalla-login { display: none !important; }
+        html.sesion-activa #contenido-portal { display: block !important; }
+    </style>
     <link rel="stylesheet" href="assets/css/styles.css">
     
     <script src="https://accounts.google.com/gsi/client" async defer></script>
