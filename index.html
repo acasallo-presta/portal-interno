@@ -6,19 +6,16 @@
     <title>Portal IA - Inicio</title>
     
     <script>
+    // 1. Verificar sesión para evitar parpadeo de pantalla
     if (sessionStorage.getItem('token_google_ia')) {
-        // Si hay sesión, marcamos el HTML para que el CSS mantenga oculto el login
         document.documentElement.classList.add('sesion-activa');
+        
+        // 2. NUEVO: Preparar el nombre antes de que cargue el body
         try {
             const token = sessionStorage.getItem('token_google_ia');
             const payload = JSON.parse(atob(token.split('.')[1]));
-            window.nombreUsuarioPrerender = "Hola, " + payload.name;
-        } catch(e) {}
-    } else {
-        // Si NO hay sesión, esperamos a que el DOM cargue y mostramos el login
-        window.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('pantalla-login').style.display = 'flex';
-        });
+            window.nombreUsuarioPre-render = "Hola, " + payload.name;
+        } catch(e) { console.error("Error pre-render", e); }
     }
 </script>
     <style>
@@ -51,7 +48,14 @@
     <nav>
         <a href="index.html" class="logo">IA AUTOMATIZA</a>
         <div>
-            <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;"></span>
+            <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;">
+                <script>
+                    // Si ya calculamos el nombre en el head, lo ponemos aquí mismo
+                    if(window.nombreUsuarioPre-render) {
+                        document.write(window.nombreUsuarioPre-render);
+                    }
+                </script>
+            </span>
             <a href="index.html">Inicio</a>
             <a href="herramientas.html">Herramientas</a>
             <a href="cursos.html">Cursos</a>
