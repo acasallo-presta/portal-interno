@@ -6,10 +6,17 @@
     <title>Portal IA - Inicio</title>
     
     <script>
-        // Si detecta la sesión activa antes de dibujar la página, inyecta una clase oculta
-        if (sessionStorage.getItem('token_google_ia')) {
-            document.documentElement.classList.add('sesion-activa');
-        }
+    // 1. Verificar sesión para evitar parpadeo de pantalla
+    if (sessionStorage.getItem('token_google_ia')) {
+        document.documentElement.classList.add('sesion-activa');
+        
+        // 2. NUEVO: Preparar el nombre antes de que cargue el body
+        try {
+            const token = sessionStorage.getItem('token_google_ia');
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            window.nombreUsuarioPre-render = "Hola, " + payload.name;
+        } catch(e) { console.error("Error pre-render", e); }
+    }
     </script>
     <style>
         /* Estas reglas se aplican instantáneamente si la clase anterior se activó */
