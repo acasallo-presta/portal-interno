@@ -6,18 +6,21 @@
     <title>Portal IA - Inicio</title>
     
     <script>
-    // 1. Verificar sesión para evitar parpadeo de pantalla
     if (sessionStorage.getItem('token_google_ia')) {
+        // Si hay sesión, marcamos el HTML para que el CSS mantenga oculto el login
         document.documentElement.classList.add('sesion-activa');
-        
-        // 2. NUEVO: Preparar el nombre antes de que cargue el body
         try {
             const token = sessionStorage.getItem('token_google_ia');
             const payload = JSON.parse(atob(token.split('.')[1]));
-            window.nombreUsuarioPre-render = "Hola, " + payload.name;
-        } catch(e) { console.error("Error pre-render", e); }
+            window.nombreUsuarioPrerender = "Hola, " + payload.name;
+        } catch(e) {}
+    } else {
+        // Si NO hay sesión, esperamos a que el DOM cargue y mostramos el login
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('pantalla-login').style.display = 'flex';
+        });
     }
-    </script>
+</script>
     <style>
     /* 1. Ocultamos el login por defecto para evitar el parpadeo */
     #pantalla-login { 
