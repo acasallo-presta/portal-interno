@@ -19,9 +19,15 @@
     }
     </script>
     <style>
-        /* Estas reglas se aplican instantáneamente si la clase anterior se activó */
-        html.sesion-activa #pantalla-login { display: none !important; }
-        html.sesion-activa #contenido-portal { display: block !important; }
+    /* 1. Ocultamos el login por defecto para evitar el parpadeo */
+    #pantalla-login { 
+        display: none; 
+    }
+
+    /* 2. Si NO hay sesión, el JS quitará este estilo o forzará el bloque */
+    /* 3. Si HAY sesión, estas reglas se activan instantáneamente */
+    html.sesion-activa #pantalla-login { display: none !important; }
+    html.sesion-activa #contenido-portal { display: block !important; }
     </style>
     <link rel="stylesheet" href="assets/css/styles.css">
     
