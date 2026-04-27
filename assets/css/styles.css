@@ -481,61 +481,6 @@ footer {
     line-height: 1.4;
     margin: 0;
 }
-/* =========================================
-   LÍNEA DE PASOS (Camino a la optimización)
-   ========================================= */
-.pasos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 50px;
-}
-
-.paso-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    position: relative;
-    border-top: 5px solid #8E9FD4; /* Color azul lavanda de la imagen */
-    transition: transform 0.3s ease;
-}
-
-.paso-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.paso-numero-flotante {
-    background: #8E9FD4;
-    color: white;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    box-shadow: 0 4px 10px rgba(142, 159, 212, 0.4);
-}
-
-.paso-card h4 {
-    color: var(--verde-oscuro);
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-.paso-card p {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.4;
-    margin: 0;
-}
 
 /* =========================================
    NAVEGACIÓN ACTIVA (Sombreado amigable)
@@ -590,3 +535,77 @@ nav a.activo {
     box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
     transform: scale(1.05); /* Crece un poquito para invitar al clic */
 }
+
+/* =========================================
+   ESTILOS DE HERRAMIENTAS Y RUTA DE APRENDIZAJE
+   ========================================= */
+.btn-herramienta {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: var(--verde-primario);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-herramienta:hover { 
+    background-color: var(--verde-oscuro); 
+}
+
+/* Ajustes específicos para las tarjetas de herramientas */
+.card h3 { 
+    color: var(--verde-oscuro); 
+    margin-bottom: 10px; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+
+.card p { 
+    margin-bottom: 8px; 
+    font-size: 0.95rem; 
+    line-height: 1.5; 
+}
+
+/* Efecto de elevación para todas las tarjetas (.card) al pasar el mouse */
+.card { 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+}
+
+/* Estilos para los Niveles de Aprendizaje */
+.nivel-seccion { 
+    margin-top: 40px; 
+    margin-bottom: 20px; 
+    border-bottom: 2px solid #eaeaea; 
+    padding-bottom: 10px; 
+}
+
+.nivel-titulo { 
+    color: var(--verde-oscuro); 
+    font-size: 1.5rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+/* Etiquetas visuales (Badges) */
+.badge { 
+    padding: 4px 10px; 
+    border-radius: 20px; 
+    font-size: 0.8rem; 
+    font-weight: bold; 
+    color: white; 
+}
+.badge-basico { background-color: #4CAF50; } /* Verde amigable */
+.badge-intermedio { background-color: #FF9800; } /* Naranja precaución */
+.badge-avanzado { background-color: #F44336; } /* Rojo experto */
