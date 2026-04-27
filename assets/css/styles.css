@@ -430,18 +430,23 @@ footer {
    LÍNEA DE PASOS (Camino a la optimización)
    ========================================= */
 .pasos-grid {
-    display: flex;
-    flex-wrap: wrap; /* Esto permite que se vuelvan verticales SOLO en pantallas pequeñas */
-    justify-content: center;
-    align-items: stretch; /* Hace que todas las tarjetas tengan la misma altura */
-    gap: 15px; /* Reducimos un poco el espacio entre ellas para que entren mejor */
+    display: grid;
+    /* MAGIA AQUÍ: Fuerza exactamente 5 columnas del mismo tamaño */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 15px;
     margin-bottom: 50px;
 }
 
+/* Regla de seguridad: Si la pantalla es pequeña (celulares/tablets), se apilan */
+@media (max-width: 950px) {
+    .pasos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
 .paso-card {
-    flex: 1 1 170px; /* Crecerán para llenar el espacio, con un ancho base de 170px */
     background: white;
-    padding: 25px 15px 15px 15px; /* Reducimos el margen interno lateral para dar espacio al texto */
+    padding: 25px 15px 15px 15px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     position: relative;
@@ -475,11 +480,11 @@ footer {
     color: var(--verde-oscuro);
     margin-top: 15px;
     margin-bottom: 5px;
-    font-size: 1.05rem; /* Un poco más pequeño para encajar en la tarjeta delgada */
+    font-size: 1.05rem;
 }
 
 .paso-card p {
-    font-size: 0.85rem; /* Ajustamos la letra para que se lea bien en horizontal */
+    font-size: 0.85rem;
     color: #555;
     line-height: 1.4;
     margin: 0;
