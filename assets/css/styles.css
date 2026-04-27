@@ -609,3 +609,37 @@ nav a.activo {
 .badge-basico { background-color: #4CAF50; } /* Verde amigable */
 .badge-intermedio { background-color: #FF9800; } /* Naranja precaución */
 .badge-avanzado { background-color: #F44336; } /* Rojo experto */
+
+
+/* =========================================
+   ESTILOS DE INICIO (Cerebro/Músculo y Pasos)
+   ========================================= */
+
+/* Estilos para las tarjetas Cerebro/Músculo */
+.tarjeta-equipo { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+    flex: 1; 
+    min-width: 280px; 
+    transition: transform 0.3s ease; 
+}
+
+.tarjeta-equipo:hover { 
+    transform: translateY(-5px); 
+}
+
+/* Ajustes para la estructura de texto en los pasos (Fase, Qué abarcar, Acción) */
+.paso-card strong { 
+    color: var(--verde-oscuro); 
+    display: inline-block; 
+    margin-top: 8px; 
+}
+
+.paso-card em { 
+    color: #888; 
+    font-size: 0.85rem; 
+    display: block; 
+    margin-bottom: 12px; 
+}
