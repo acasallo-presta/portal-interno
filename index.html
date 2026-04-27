@@ -28,6 +28,10 @@
         /* Pequeño ajuste para la nueva estructura de texto en los pasos */
         .paso-card strong { color: var(--verde-oscuro); display: inline-block; margin-top: 8px; }
         .paso-card em { color: #888; font-size: 0.85rem; display: block; margin-bottom: 12px; }
+        
+        /* Estilos para las tarjetas Cerebro/Músculo */
+        .tarjeta-equipo { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); flex: 1; min-width: 280px; transition: transform 0.3s ease; }
+        .tarjeta-equipo:hover { transform: translateY(-5px); }
     </style>
     
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -64,52 +68,63 @@
     </nav>
 
     <section class="hero">
-        <h1>Bienvenido al Futuro de tu Trabajo</h1>
-        <p>Descubre cómo la Automatización y la Inteligencia Artificial se complementan para maximizar el valor de tu tiempo.</p>
-        <a href="herramientas.html" class="btn-principal">Descubrir Herramientas</a>
+        <h1>Bienvenido al futuro de tu trabajo</h1>
+        <p>Descubre cómo la Automatización y la Inteligencia Artificial se unen para liberarte de la rutina y maximizar el valor de tu tiempo.</p>
+        <a href="herramientas.html" class="btn-principal">🚀 Descubrir Herramientas</a>
     </section>
 
     <div class="content seccion-educativa" style="max-width: 1000px; margin: 0 auto;">
         
-        <h2 style="text-align: center; color: var(--verde-oscuro); border-bottom: 2px solid var(--verde-primario); padding-bottom: 10px; margin-bottom: 20px;">¿Por qué integrar Automatización e IA?</h2>
-        <p style="text-align: center; color: #555; margin-bottom: 40px;">Ambas tecnologías trabajan en equipo para potenciar tus habilidades. La automatización se encarga de las tareas repetitivas, mientras que la IA te asiste en el análisis. Estos son sus principales beneficios:</p>
+        <h2 style="text-align: center; color: var(--verde-oscuro); border-bottom: 2px solid var(--verde-primario); padding-bottom: 10px; margin-bottom: 20px;">Tu nuevo súper-equipo: Automatización + IA</h2>
+        <p style="text-align: center; color: #555; margin-bottom: 30px; font-size: 1.1rem;">Olvídate de verlas como herramientas separadas; juntas son el equipo perfecto para facilitar tu día. La regla de oro es muy sencilla: <strong>"La IA lo arma, la automatización lo envía"</strong>.</p>
+        
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-bottom: 50px;">
+            <div class="tarjeta-equipo" style="border-left: 5px solid var(--verde-primario);">
+                <h3 style="color: var(--verde-oscuro); margin-top: 0; font-size: 1.3rem;">🤖 El Cerebro (La IA)</h3>
+                <p style="color: #555; margin-bottom: 0;">Aporta la inteligencia. Te ayuda a redactar correos, resumir documentos largos o analizar datos complejos en segundos.</p>
+            </div>
+            <div class="tarjeta-equipo" style="border-left: 5px solid #8E9FD4;">
+                <h3 style="color: var(--verde-oscuro); margin-top: 0; font-size: 1.3rem;">⚙️ El Músculo (Automatización)</h3>
+                <p style="color: #555; margin-bottom: 0;">Se encarga del trabajo repetitivo. Mueve los archivos, copia la información o envía automáticamente el correo que la IA ya redactó.</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; color: var(--verde-oscuro); margin-bottom: 30px; font-size: 1.5rem;">¿Por qué integrar este súper-equipo en tu área?</h3>
         
         <div class="beneficios-container">
             <div class="beneficio-item">
-                <span class="beneficio-icono">⚙️</span>
+                <span class="beneficio-icono">⏱️</span>
                 <div class="beneficio-texto">
-                    <h3>Productividad</h3>
-                    <p>Ayuda a reducir significativamente el tiempo que inviertes en tareas rutinarias y manuales.</p>
-                </div>
-            </div>
-            <div class="beneficio-item">
-                <span class="beneficio-icono">📈</span>
-                <div class="beneficio-texto">
-                    <h3>Rendimiento</h3>
-                    <p>Disminuye errores operativos. Recuerda: la IA es un gran asistente, pero depende de que le des buenas instrucciones (prompts) para no equivocarse.</p>
-                </div>
-            </div>
-            <div class="beneficio-item">
-                <span class="beneficio-icono">💰</span>
-                <div class="beneficio-texto">
-                    <h3>Eficiencia de Costos</h3>
-                    <p>Optimiza la prestación de servicios, permitiendo hacer más eficientes los procesos con los recursos operativos actuales.</p>
+                    <h3>Más Productividad</h3>
+                    <p>Despídete de las tareas aburridas y manuales. Libera tu agenda para lo importante.</p>
                 </div>
             </div>
             <div class="beneficio-item">
                 <span class="beneficio-icono">✅</span>
                 <div class="beneficio-texto">
-                    <h3>Fiabilidad</h3>
-                    <p>Facilita la producción de resultados más consistentes y uniformes en el día a día.</p>
+                    <h3>Menos Errores</h3>
+                    <p>Obtén resultados precisos, uniformes y confiables todos los días.</p>
                 </div>
             </div>
             <div class="beneficio-item">
-                <span class="beneficio-icono">🔋</span>
+                <span class="beneficio-icono">💰</span>
                 <div class="beneficio-texto">
-                    <h3>Disponibilidad</h3>
-                    <p>Aumenta la motivación al liberar tu agenda, permitiéndote dedicar más tiempo a tareas creativas y prioritarias.</p>
+                    <h3>Mayor Eficiencia</h3>
+                    <p>Logra mejores resultados invirtiendo mucho menos esfuerzo operativo.</p>
                 </div>
             </div>
+            <div class="beneficio-item" style="grid-column: 1 / -1; max-width: 500px; margin: 0 auto;">
+                <span class="beneficio-icono">🔋</span>
+                <div class="beneficio-texto">
+                    <h3>Espacio para la Creatividad</h3>
+                    <p>Usa tu energía en tareas estratégicas y proyectos que realmente te motiven.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background-color: var(--verde-claro); padding: 30px; border-radius: 12px; border: 2px dashed var(--verde-primario); margin: 50px 0; text-align: center;">
+            <h3 style="color: var(--verde-oscuro); margin-top: 0; font-size: 1.4rem;">💡 Nota Clave para empezar</h3>
+            <p style="color: #444; margin-bottom: 0; font-size: 1.1rem;">La IA es el mejor asistente del mundo, pero necesita que le des instrucciones claras (a esto le llamamos <strong>prompts</strong>). ¡Aprender a pedirle las cosas es el único secreto para obtener resultados excepcionales!</p>
         </div>
 
         <h2 style="text-align: center; color: var(--verde-oscuro); border-bottom: 2px solid var(--verde-primario); padding-bottom: 10px; margin-top: 60px; margin-bottom: 20px;">El Marco de Transformación (Paso a Paso)</h2>
