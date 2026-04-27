@@ -377,3 +377,51 @@ footer {
     border-bottom: 4px solid var(--verde-primario); 
     box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
 }
+
+/* =========================================
+   CÍRCULOS DE BENEFICIOS (Formato de Tarjeta)
+   ========================================= */
+.beneficios-container {
+    display: grid;
+    /* Esto es clave: crea columnas que se adaptan, mínimo 320px de ancho */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.beneficio-item {
+    display: flex;             /* Usa flexbox para alinear ícono y texto */
+    align-items: center;       /* Centra verticalmente */
+    text-align: left;          /* Texto alineado a la izquierda */
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra suave */
+    transition: transform 0.3s ease;
+    border-left: 4px solid transparent; /* Espacio para el borde en hover */
+}
+
+.beneficio-item:hover {
+    transform: translateX(5px); /* Pequeño movimiento a la derecha */
+    border-left: 4px solid var(--verde-primario); /* Borde verde al pasar el mouse */
+}
+
+.beneficio-icono {
+    font-size: 2.2rem;
+    margin-right: 15px;
+    flex-shrink: 0;            /* Evita que el ícono se encoja si hay mucho texto */
+}
+
+.beneficio-texto h3 {
+    color: #A02B5F;            /* Color vino, puedes ajustarlo si prefieres tu verde */
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+.beneficio-texto p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.3;
+    margin: 0;
+}
