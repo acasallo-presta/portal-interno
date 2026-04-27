@@ -536,3 +536,57 @@ footer {
     line-height: 1.4;
     margin: 0;
 }
+
+/* =========================================
+   NAVEGACIÓN ACTIVA (Sombreado amigable)
+   ========================================= */
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio uniforme entre botones */
+}
+
+nav a {
+    padding: 8px 16px;
+    border-radius: 8px; /* Bordes suaves */
+    transition: all 0.3s ease;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efecto sutil al pasar el mouse */
+}
+
+/* El estado "activo" cuando estás en esa página */
+nav a.activo {
+    background-color: var(--verde-primario);
+    color: var(--verde-oscuro);
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 203, 117, 0.3); /* Un brillo verde amigable */
+}
+
+/* =========================================
+   BOTÓN CERRAR SESIÓN (Alerta amigable)
+   ========================================= */
+.btn-logout {
+    background-color: #FFF0F0; /* Fondo rojo muy pastel/suave */
+    color: #D32F2F; /* Texto rojo oscuro (indica cierre/alerta pero no asusta) */
+    border: 1px solid #FFCDCD;
+    padding: 8px 20px;
+    border-radius: 20px; /* Forma de "píldora" para separarlo del menú regular */
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 20px; /* Lo separa un poco más del resto del menú */
+}
+
+/* Efecto al pasar el mouse por encima de Cerrar Sesión */
+.btn-logout:hover {
+    background-color: #D32F2F; /* Se vuelve rojo sólido */
+    color: white; /* Letras blancas */
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+    transform: scale(1.05); /* Crece un poquito para invitar al clic */
+}
