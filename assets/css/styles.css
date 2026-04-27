@@ -430,19 +430,22 @@ footer {
    LÍNEA DE PASOS (Camino a la optimización)
    ========================================= */
 .pasos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    display: flex;
+    flex-wrap: wrap; /* Esto permite que se vuelvan verticales SOLO en pantallas pequeñas */
+    justify-content: center;
+    align-items: stretch; /* Hace que todas las tarjetas tengan la misma altura */
+    gap: 15px; /* Reducimos un poco el espacio entre ellas para que entren mejor */
     margin-bottom: 50px;
 }
 
 .paso-card {
+    flex: 1 1 170px; /* Crecerán para llenar el espacio, con un ancho base de 170px */
     background: white;
-    padding: 25px;
+    padding: 25px 15px 15px 15px; /* Reducimos el margen interno lateral para dar espacio al texto */
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     position: relative;
-    border-top: 5px solid #8E9FD4; /* Color azul lavanda de la imagen */
+    border-top: 5px solid #8E9FD4;
     transition: transform 0.3s ease;
 }
 
@@ -464,22 +467,35 @@ footer {
     font-size: 1.2rem;
     position: absolute;
     top: -20px;
-    left: 20px;
+    left: 15px;
     box-shadow: 0 4px 10px rgba(142, 159, 212, 0.4);
 }
 
 .paso-card h4 {
     color: var(--verde-oscuro);
     margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    margin-bottom: 5px;
+    font-size: 1.05rem; /* Un poco más pequeño para encajar en la tarjeta delgada */
 }
 
 .paso-card p {
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* Ajustamos la letra para que se lea bien en horizontal */
     color: #555;
     line-height: 1.4;
     margin: 0;
+}
+
+.paso-card strong { 
+    color: var(--verde-oscuro); 
+    display: inline-block; 
+    margin-top: 8px; 
+}
+
+.paso-card em { 
+    color: #888; 
+    font-size: 0.8rem; 
+    display: block; 
+    margin-bottom: 10px; 
 }
 
 /* =========================================
