@@ -8,46 +8,99 @@
     <script src="assets/js/guardian.js"></script>
 
     <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <style>
+        .btn-herramienta {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: var(--verde-primario);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-herramienta:hover {
+            background-color: var(--verde-oscuro);
+        }
+        /* Ajuste de márgenes dentro de las tarjetas */
+        .card h3 { color: var(--verde-oscuro); margin-bottom: 10px; }
+        .card p { margin-bottom: 8px; font-size: 0.95rem; }
+    </style>
 </head>
 <body>
 
 <nav>
-        <a href="index.html" class="logo">Presta Innovation V</a>
-        <div>
-            <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;"></span>
-            <a href="index.html">Inicio</a>
-            <a href="herramientas.html">Herramientas</a>
-            <a href="cursos.html">Cursos</a>
-            <button class="btn-logout" onclick="cerrarSesion()">[ Salir ]</button>
-        </div>
-    </nav>
+    <a href="index.html" class="logo">Presta Innovation V</a>
+    <div>
+        <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;"></span>
+        
+        <a href="index.html">Inicio</a>
+        <a href="herramientas.html" class="activo">Herramientas</a> <a href="cursos.html">Cursos</a>
+        
+        <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</nav>
 
 <div class="header-seccion">
     <h1>Nuestra Caja de Herramientas</h1>
-    <p>Tecnologías que impulsan la eficiencia en Prestamype y Cambio Seguro.</p>
+    <p>Las principales plataformas de Inteligencia Artificial y automatización para impulsar la eficiencia en Prestamype y Cambio Seguro.</p>
 </div>
 
 <div class="content">
     <div class="card-grid">
+        
         <div class="card">
-            <h3>Google Workspace</h3>
-            <p>Uso avanzado de Google Sheets, Forms y Gmail. Es nuestra base para capturar datos y generar flujos de trabajo colaborativos en tiempo real.</p>
+            <h3>Google Gemini IA</h3>
+            <p><strong>¿Qué es?</strong> Tu asistente inteligente multipropósito.</p>
+            <p><strong>Alcance:</strong> Ideal para redactar correos formales, resumir textos largos, proponer ideas o estructurar proyectos. A nivel avanzado, funciona como un "copiloto" capaz de ayudarte a analizar datos o escribir fórmulas complejas.</p>
+            <a href="https://gemini.google.com/" target="_blank" class="btn-herramienta">Ir a Gemini IA</a>
         </div>
 
         <div class="card">
-            <h3>Cloudflare AI</h3>
-            <p>Nuestro motor de inteligencia artificial. Utilizamos modelos como Llama 3 para procesar lenguaje natural, analizar documentos y potenciar nuestro Chatbot interno.</p>
+            <h3>Google Gems</h3>
+            <p><strong>¿Qué es?</strong> Expertos de IA "a la medida".</p>
+            <p><strong>Alcance:</strong> Te permite crear versiones personalizadas de Gemini. Puedes darles instrucciones específicas para que actúen de forma automática como tutores de tu área, revisores de contratos o analistas financieros con tu propio tono empresarial.</p>
+            <a href="https://gemini.google.com/gems/view" target="_blank" class="btn-herramienta">Ir a Google Gems</a>
+        </div>
+
+        <div class="card">
+            <h3>Google NotebookLM</h3>
+            <p><strong>¿Qué es?</strong> Un analista de documentos altamente confiable.</p>
+            <p><strong>Alcance:</strong> Sube tus propios PDFs, manuales o políticas. La IA responderá a tus preguntas basándose <em>exclusivamente</em> en esos documentos (sin inventar información externa). Es la forma más rápida de encontrar datos clave en archivos enormes.</p>
+            <a href="https://notebooklm.google.com/" target="_blank" class="btn-herramienta">Ir a NotebookLM</a>
         </div>
 
         <div class="card">
             <h3>Google Apps Script</h3>
-            <p>El "pegamento" de nuestras automatizaciones. Permite conectar todas las herramientas de Google con servicios externos mediante código personalizado.</p>
+            <p><strong>¿Qué es?</strong> El motor de las automatizaciones.</p>
+            <p><strong>Alcance:</strong> Es el código (puente) que permite que las apps de Google trabajen solas. Si necesitas que al responder un formulario (Forms) se genere un PDF y se envíe por Gmail de forma totalmente automática, esta herramienta es la que lo hace posible.</p>
+            <a href="https://script.google.com/" target="_blank" class="btn-herramienta">Ir a Apps Script</a>
         </div>
-        
+
         <div class="card">
-            <h3>Webhooks & APIs</h3>
-            <p>La forma en que nuestros sistemas se hablan entre sí. Crucial para enviar notificaciones automáticas a Google Chat o Slack ante eventos importantes.</p>
+            <h3>Google AppSheet</h3>
+            <p><strong>¿Qué es?</strong> Creador de aplicaciones sin saber programar.</p>
+            <p><strong>Alcance:</strong> Transforma una simple hoja de cálculo (Google Sheets) en una aplicación móvil o web completa. Perfecto para que los colaboradores registren datos operativos desde sus celulares y la información llegue ordenada a una base central.</p>
+            <a href="https://www.appsheet.com/" target="_blank" class="btn-herramienta">Ir a AppSheet</a>
         </div>
+
+        <div class="card">
+            <h3>Google Workspace Studio</h3>
+            <p><strong>¿Qué es?</strong> Entorno de integraciones avanzadas.</p>
+            <p><strong>Alcance:</strong> El espacio donde se construyen complementos empresariales. Permite vincular soluciones y modelos de IA directamente dentro de Gmail, Drive o Docs, unificando los flujos de trabajo de todo el equipo en un solo lugar.</p>
+            <a href="https://studio.workspace.google.com/" target="_blank" class="btn-herramienta">Ir a Workspace Studio</a>
+        </div>
+
+        <div class="card">
+            <h3>Google Sites</h3>
+            <p><strong>¿Qué es?</strong> Constructor de páginas web internas.</p>
+            <p><strong>Alcance:</strong> Te permite armar portales web, intranets o centros de ayuda arrastrando y soltando elementos. Es una forma ágil de centralizar manuales, enlaces e información de tu área sin depender de diseñadores ni de código.</p>
+            <a href="https://sites.google.com/" target="_blank" class="btn-herramienta">Ir a Google Sites</a>
+        </div>
+
     </div>
 </div>
 
