@@ -20,6 +20,13 @@
         }
     </script>
     
+    <style>
+        /* Reglas Anti-parpadeo (se mantienen aquí por velocidad de carga) */
+        #pantalla-login { display: none; }
+        html.sesion-activa #pantalla-login { display: none !important; }
+        html.sesion-activa #contenido-portal { display: block !important; }
+    </style>
+    
     <link rel="stylesheet" href="assets/css/styles.css">
     
     <script src="https://accounts.google.com/gsi/client" async defer></script>
