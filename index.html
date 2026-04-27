@@ -3,19 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presta Innovation V - Login</title>
+    <title>Presta Innovation V - Inicio</title>
     
     <script>
-        // Si detecta la sesión activa antes de dibujar la página, inyecta una clase oculta
         if (sessionStorage.getItem('token_google_ia')) {
             document.documentElement.classList.add('sesion-activa');
+            try {
+                const token = sessionStorage.getItem('token_google_ia');
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                window.nombreUsuarioPrerender = "Hola, " + payload.name;
+            } catch(e) {}
+        } else {
+            window.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('pantalla-login').style.display = 'flex';
+            });
         }
     </script>
     <style>
-        /* Estas reglas se aplican instantáneamente si la clase anterior se activó */
+        /* Ocultar por defecto para evitar FOUC */
+        #pantalla-login { display: none; }
+        
+        /* Aplicación de estado de sesión */
         html.sesion-activa #pantalla-login { display: none !important; }
         html.sesion-activa #contenido-portal { display: block !important; }
+        
+        /* Estilos específicos para la sección educativa del Inicio */
+        .seccion-educativa { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .seccion-educativa h2 { color: var(--verde-oscuro); text-align: center; font-size: 1.8rem; margin-bottom: 10px; border-bottom: 2px solid var(--verde-primario); padding-bottom: 10px;}
+        .seccion-educativa p.intro { text-align: center; color: #555; margin-bottom: 40px; font-size: 1.1rem; }
+        
+        /* Círculos de Beneficios */
+        .beneficios-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 50px; }
+        .beneficio-item { width: 250px; text-align: center; background: white; padding: 25px 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+        .beneficio-item:hover { transform: translateY(-5px); border-bottom: 4px solid var(--verde-primario); }
+        .beneficio-icono { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+        .beneficio-item h3 { color: #A02B5F; /* Color vino de la imagen */ font-size: 1.1rem; margin-bottom: 10px; }
+        .beneficio-item p { font-size: 0.9rem; color: #555; line-height: 1.4; }
+        
+        /* Línea de tiempo de los pasos */
+        .pasos-container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .paso-fila { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px dashed #ddd; }
+        .paso-fila:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .paso-numero { background-color: #8E9FD4; /* Color azul claro de la imagen */ color: white; min-width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; }
+        .paso-contenido h4 { color: var(--verde-oscuro); margin-bottom: 5px; }
+        .paso-contenido p { font-size: 0.95rem; color: #555; }
     </style>
+    
     <link rel="stylesheet" href="assets/css/styles.css">
     
     <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -35,38 +68,98 @@
     <nav>
         <a href="index.html" class="logo">Presta Innovation V</a>
         <div>
-            <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;"></span>
-            <a href="index.html">Inicio</a>
+            <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;">
+                <script>
+                    if(window.nombreUsuarioPrerender) {
+                        document.write(window.nombreUsuarioPrerender);
+                    }
+                </script>
+            </span>
+            <a href="index.html" class="activo">Inicio</a>
             <a href="herramientas.html">Herramientas</a>
             <a href="cursos.html">Cursos</a>
-            <button class="btn-logout" onclick="cerrarSesion()">[ Salir ]</button>
+            <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>Automatiza tu Flujo de Trabajo con IA</h1>
-        <p>La plataforma centralizada para potenciar la eficiencia interna mediante inteligencia artificial.</p>
-        <a href="cursos.html" class="btn-principal">Empezar a Aprender ahora</a>
+        <h1>Bienvenido al Futuro de tu Trabajo</h1>
+        <p>Aprende a usar la tecnología para maximizar el valor de tu tiempo con una mínima intervención manual.</p>
+        <a href="herramientas.html" class="btn-principal">Descubrir Herramientas IA</a>
     </section>
 
-    <div class="content">
+    <div class="seccion-educativa">
+        
         <h2>¿Por qué automatizar hoy?</h2>
-        <div class="card-grid">
-            <div class="card">
-                <h3>Ahorro de Tiempo</h3>
-                <p>Delegue tareas repetitivas a la IA y enfóquese en lo que genera valor real.</p>
+        <p class="intro">La automatización no es reemplazar tu trabajo, es potenciarlo. Estos son los beneficios directos que obtendrás al aplicar la IA en tu día a día:</p>
+        
+        <div class="beneficios-container">
+            <div class="beneficio-item">
+                <span class="beneficio-icono">⚙️</span>
+                <h3>Productividad</h3>
+                <p>Reduce drásticamente el tiempo que tardas en completar tareas repetitivas.</p>
             </div>
-            <div class="card">
-                <h3>Escalabilidad</h3>
-                <p>Procesos que crecen sin necesidad de aumentar la carga operativa manual.</p>
+            <div class="beneficio-item">
+                <span class="beneficio-icono">📈</span>
+                <h3>Rendimiento</h3>
+                <p>Disminuye el número de errores humanos y aporta precisión extrema a tus resultados.</p>
+            </div>
+            <div class="beneficio-item">
+                <span class="beneficio-icono">💰</span>
+                <h3>Reducción de Costos</h3>
+                <p>Mejora la calidad de tus entregas sin necesidad de invertir más recursos operativos.</p>
+            </div>
+            <div class="beneficio-item">
+                <span class="beneficio-icono">✅</span>
+                <h3>Fiabilidad</h3>
+                <p>Garantiza resultados consistentes y de alta calidad en todo momento.</p>
+            </div>
+            <div class="beneficio-item">
+                <span class="beneficio-icono">🔋</span>
+                <h3>Disponibilidad</h3>
+                <p>Libera tu tiempo para que puedas dedicar tu energía a tareas creativas y estratégicas que realmente importan.</p>
             </div>
         </div>
+
+        <h2>El camino correcto a la optimización</h2>
+        <p class="intro">Independientemente de la herramienta que elijas, todo proyecto de automatización exitoso sigue estos sencillos pasos:</p>
+
+        <div class="pasos-container">
+            <div class="paso-fila">
+                <div class="paso-numero">1</div>
+                <div class="paso-contenido">
+                    <h4>Entiende el contexto actual</h4>
+                    <p>Antes de usar IA, debes evaluar cómo estás haciendo el trabajo hoy y detectar qué pasos son manuales, repetitivos o demorados.</p>
+                </div>
+            </div>
+            <div class="paso-fila">
+                <div class="paso-numero">2</div>
+                <div class="paso-contenido">
+                    <h4>Diseña el futuro deseado</h4>
+                    <p>Imagina cómo sería el proceso ideal. ¿Qué tareas debería hacer la máquina sola para que tú solo tengas que revisar el resultado final?</p>
+                </div>
+            </div>
+            <div class="paso-fila">
+                <div class="paso-numero">3</div>
+                <div class="paso-contenido">
+                    <h4>Ejecuta de forma iterativa</h4>
+                    <p>No intentes automatizar todo el primer día. Empieza con una tarea pequeña usando una herramienta básica (como Gemini), pruébala y mejórala poco a poco.</p>
+                </div>
+            </div>
+            <div class="paso-fila">
+                <div class="paso-numero">4</div>
+                <div class="paso-contenido">
+                    <h4>Asegura y Monitorea</h4>
+                    <p>Una vez automatizado, verifica constantemente que la IA esté arrojando los resultados correctos y mide cuánto tiempo estás ahorrando realmente.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <footer>&copy; 2026 Portal Interno Presta Innovation V</footer>
 
     <button id="btn-abrir-chat" onclick="toggleChat()">💬 Consultar IA</button>
-
     <div id="chatbot-flotante">
         <div id="chat-header">
             <span>🤖 Asistente IA</span>
@@ -84,4 +177,3 @@
 
 </body>
 </html>
-
