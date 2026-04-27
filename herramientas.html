@@ -8,40 +8,6 @@
     <script src="assets/js/guardian.js"></script>
 
     <link rel="stylesheet" href="assets/css/styles.css">
-    
-    <style>
-        .btn-herramienta {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 8px 16px;
-            background-color: var(--verde-primario);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            text-align: center;
-        }
-        .btn-herramienta:hover { background-color: var(--verde-oscuro); }
-        
-        .card h3 { color: var(--verde-oscuro); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .card p { margin-bottom: 8px; font-size: 0.95rem; line-height: 1.5; }
-        
-        /* Estilos para los Niveles de Aprendizaje */
-        .nivel-seccion { margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
-        .nivel-titulo { color: var(--verde-oscuro); font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
-        
-        /* Etiquetas visuales (Badges) */
-        .badge { padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; color: white; }
-        .badge-basico { background-color: #4CAF50; } /* Verde amigable */
-        .badge-intermedio { background-color: #FF9800; } /* Naranja precaución */
-        .badge-avanzado { background-color: #F44336; } /* Rojo detente/experto */
-        
-        /* Sombra suave para que las tarjetas resalten más al pasar el mouse */
-        .card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    </style>
 </head>
 <body>
 
@@ -51,7 +17,7 @@
         <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;"></span>
         
         <a href="index.html">Inicio</a>
-        <a href="herramientas.html" class="activo">Herramientas</a>
+        <a href="herramientas.html">Herramientas</a>
         <a href="cursos.html">Cursos</a>
         
         <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
