@@ -24,6 +24,10 @@
         #pantalla-login { display: none; }
         html.sesion-activa #pantalla-login { display: none !important; }
         html.sesion-activa #contenido-portal { display: block !important; }
+        
+        /* Pequeño ajuste para la nueva estructura de texto en los pasos */
+        .paso-card strong { color: var(--verde-oscuro); display: inline-block; margin-top: 8px; }
+        .paso-card em { color: #888; font-size: 0.85rem; display: block; margin-bottom: 12px; }
     </style>
     
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -109,37 +113,52 @@
         </div>
 
         <h2 style="text-align: center; color: var(--verde-oscuro); border-bottom: 2px solid var(--verde-primario); padding-bottom: 10px; margin-top: 60px; margin-bottom: 20px;">El Marco de Transformación (Paso a Paso)</h2>
-        <p style="text-align: center; color: #555; margin-bottom: 40px;">Basado en el modelo oficial de Google, todo proyecto exitoso de IA y automatización sigue estas 5 fases de forma práctica y sencilla:</p>
+        <p style="text-align: center; color: #555; margin-bottom: 40px;">Basado en el modelo oficial de Google, todo proyecto exitoso sigue estas 5 fases. No necesitas ser un experto, solo sigue esta guía:</p>
 
         <div class="pasos-grid">
             <div class="paso-card">
                 <div class="paso-numero-flotante">1</div>
-                <h4>Inspirar (Inspire)</h4>
-                <p>Identifica oportunidades de impacto. Todo inicia con una simple pregunta estratégica: <em>¿Qué problema específico de nuestro trabajo diario queremos resolver?</em></p>
+                <h4>🪄 Encuentra tu "Dolor"</h4>
+                <em>Fase: Inspirar y Contextualizar</em>
+                <p>El objetivo no es usar tecnología, sino resolver un problema real.</p>
+                <p><strong>🎯 Qué abarcar:</strong> Identifica tareas que cumplan con las "3 R": Repetitivas, Rutinarias y con Reglas claras.</p>
+                <p><strong>✅ Acción:</strong> Haz una lista de las tareas que más tiempo te quitan y que consistan básicamente en "mover datos" (ej. copiar de un PDF a un Excel).</p>
             </div>
             
             <div class="paso-card">
                 <div class="paso-numero-flotante">2</div>
-                <h4>Evaluar (Assess)</h4>
-                <p>Analiza con qué cuentas actualmente. Antes de empezar, revisa qué datos tienes disponibles, los recursos de tu equipo y las restricciones del proceso.</p>
+                <h4>📋 Revisa tus "Ingredientes"</h4>
+                <em>Fase: Evaluación y Datos</em>
+                <p>La automatización es como una receta: si los ingredientes son malos, el resultado también.</p>
+                <p><strong>🎯 Qué abarcar:</strong> ¿Tus datos están en digital? ¿El proceso sigue siempre los mismos pasos o depende del criterio humano?</p>
+                <p><strong>✅ Acción:</strong> Asegúrate de que no haya papel de por medio. Si hay muchas excepciones en el proceso, aún no es momento de automatizar.</p>
             </div>
 
             <div class="paso-card">
                 <div class="paso-numero-flotante">3</div>
-                <h4>Experimentar (Experiment)</h4>
-                <p>Haz pruebas controladas. Prueba tu idea en un entorno pequeño para ver cómo se comporta. Esto te permite "fallar rápido y barato" si la idea inicial no es viable.</p>
+                <h4>🧪 Haz una Prueba Pequeña</h4>
+                <em>Fase: Experimentación</em>
+                <p>No intentes automatizar todo el departamento de golpe. Empieza poco a poco.</p>
+                <p><strong>🎯 Qué abarcar:</strong> Selecciona un solo paso del proceso que sea crítico pero sencillo de abordar.</p>
+                <p><strong>✅ Acción:</strong> Crea un "Prototipo" en una semana (ej. lograr que al llegar un correo con una palabra clave, se guarde el adjunto en Drive).</p>
             </div>
 
             <div class="paso-card">
                 <div class="paso-numero-flotante">4</div>
-                <h4>Desplegar (Deploy)</h4>
-                <p>Lánzalo a la realidad. Integra la solución poco a poco en las operaciones de tu equipo, siempre acompañándolo de una buena gestión del cambio.</p>
+                <h4>🚀 Construye y Lanza</h4>
+                <em>Fase: Despliegue y Optimización</em>
+                <p>Usa las herramientas que ya tienes a la mano para darle vida a tu idea.</p>
+                <p><strong>🎯 Qué abarcar:</strong> Elegir la herramienta adecuada (¿Es una App móvil? ¿Un chatbot? ¿Un formulario?).</p>
+                <p><strong>✅ Acción:</strong> Con apoyo del COE, utiliza plataformas como AppSheet o Google Gems para que tu equipo empiece a usar la solución en su día a día.</p>
             </div>
 
             <div class="paso-card">
                 <div class="paso-numero-flotante">5</div>
-                <h4>Sostener (Sustain)</h4>
-                <p>Monitorea y mejora. La tecnología requiere mantenimiento; evalúa constantemente cómo está funcionando para asegurar que siga siendo útil en el futuro.</p>
+                <h4>🛡️ Mide y Cuida tu Solución</h4>
+                <em>Fase: Sostenibilidad</em>
+                <p>Recuerda la regla de oro: lo que no se mide, no se mejora.</p>
+                <p><strong>🎯 Qué abarcar:</strong> ¿Cuánto tiempo ahorramos realmente? ¿El equipo se siente más cómodo?</p>
+                <p><strong>✅ Acción:</strong> Revisa una vez al mes si todo sigue funcionando y pide feedback. Si el proceso cambia en la vida real, ¡la automatización debe actualizarse!</p>
             </div>
         </div>
 
