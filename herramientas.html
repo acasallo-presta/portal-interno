@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presta Innovation V - Herramientas</title>
+    <title>Presta Innovation V - Ruta de Herramientas</title>
     
     <script src="assets/js/guardian.js"></script>
 
@@ -21,13 +21,26 @@
             font-size: 0.9rem;
             font-weight: bold;
             transition: background-color 0.3s ease;
+            text-align: center;
         }
-        .btn-herramienta:hover {
-            background-color: var(--verde-oscuro);
-        }
-        /* Ajuste de márgenes dentro de las tarjetas */
-        .card h3 { color: var(--verde-oscuro); margin-bottom: 10px; }
-        .card p { margin-bottom: 8px; font-size: 0.95rem; }
+        .btn-herramienta:hover { background-color: var(--verde-oscuro); }
+        
+        .card h3 { color: var(--verde-oscuro); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .card p { margin-bottom: 8px; font-size: 0.95rem; line-height: 1.5; }
+        
+        /* Estilos para los Niveles de Aprendizaje */
+        .nivel-seccion { margin-top: 40px; margin-bottom: 20px; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
+        .nivel-titulo { color: var(--verde-oscuro); font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        
+        /* Etiquetas visuales (Badges) */
+        .badge { padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; color: white; }
+        .badge-basico { background-color: #4CAF50; } /* Verde amigable */
+        .badge-intermedio { background-color: #FF9800; } /* Naranja precaución */
+        .badge-avanzado { background-color: #F44336; } /* Rojo detente/experto */
+        
+        /* Sombra suave para que las tarjetas resalten más al pasar el mouse */
+        .card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -38,70 +51,92 @@
         <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;"></span>
         
         <a href="index.html">Inicio</a>
-        <a href="herramientas.html" class="activo">Herramientas</a> <a href="cursos.html">Cursos</a>
+        <a href="herramientas.html" class="activo">Herramientas</a>
+        <a href="cursos.html">Cursos</a>
         
         <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
     </div>
 </nav>
 
 <div class="header-seccion">
-    <h1>Nuestra Caja de Herramientas</h1>
-    <p>Las principales plataformas de Inteligencia Artificial y automatización para impulsar la eficiencia en Prestamype y Cambio Seguro.</p>
+    <h1>Tu Ruta hacia la Automatización</h1>
+    <p>Hemos organizado nuestras tecnologías de más sencillas a más avanzadas. Si eres nuevo, ¡empieza por el Nivel 1 y ve subiendo a tu propio ritmo!</p>
 </div>
 
 <div class="content">
+
+    <div class="nivel-seccion">
+        <h2 class="nivel-titulo"><span class="badge badge-basico">Nivel 1: Básico</span> Asistentes para el Día a Día</h2>
+        <p>Herramientas intuitivas de Inteligencia Artificial en las que solo necesitas escribir lo que deseas.</p>
+    </div>
+    
     <div class="card-grid">
-        
         <div class="card">
-            <h3>Google Gemini IA</h3>
+            <h3>✨ Google Gemini IA</h3>
             <p><strong>¿Qué es?</strong> Tu asistente inteligente multipropósito.</p>
-            <p><strong>Alcance:</strong> Ideal para redactar correos formales, resumir textos largos, proponer ideas o estructurar proyectos. A nivel avanzado, funciona como un "copiloto" capaz de ayudarte a analizar datos o escribir fórmulas complejas.</p>
-            <a href="https://gemini.google.com/" target="_blank" class="btn-herramienta">Ir a Gemini IA</a>
+            <p><strong>¿Para qué usarlo?</strong> Ideal para redactar correos formales, resumir textos largos, o proponer ideas creativas. Imagina que es un compañero de trabajo experto al que le puedes pedir que analice datos o estructure un proyecto desde cero.</p>
+            <a href="https://gemini.google.com/" target="_blank" class="btn-herramienta">Empezar con Gemini</a>
         </div>
 
         <div class="card">
-            <h3>Google Gems</h3>
-            <p><strong>¿Qué es?</strong> Expertos de IA "a la medida".</p>
-            <p><strong>Alcance:</strong> Te permite crear versiones personalizadas de Gemini. Puedes darles instrucciones específicas para que actúen de forma automática como tutores de tu área, revisores de contratos o analistas financieros con tu propio tono empresarial.</p>
-            <a href="https://gemini.google.com/gems/view" target="_blank" class="btn-herramienta">Ir a Google Gems</a>
+            <h3>📚 Google NotebookLM</h3>
+            <p><strong>¿Qué es?</strong> Tu analista de documentos de confianza.</p>
+            <p><strong>¿Para qué usarlo?</strong> Sube tus propios PDFs, políticas de la empresa o manuales largos. La IA leerá todo y responderá a tus preguntas basándose <em>exclusivamente</em> en esos archivos, sin inventar nada. Perfecto para investigar rápido.</p>
+            <a href="https://notebooklm.google.com/" target="_blank" class="btn-herramienta">Probar NotebookLM</a>
+        </div>
+    </div>
+
+
+    <div class="nivel-seccion">
+        <h2 class="nivel-titulo"><span class="badge badge-intermedio">Nivel 2: Intermedio</span> Creadores de Soluciones (No-Code)</h2>
+        <p>Para cuando necesitas herramientas personalizadas o estructurar información sin saber programar.</p>
+    </div>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>💎 Google Gems</h3>
+            <p><strong>¿Qué es?</strong> Tus propios expertos de IA "a la medida".</p>
+            <p><strong>¿Para qué usarlo?</strong> Te permite configurar versiones de Gemini para tareas repetitivas. Por ejemplo, puedes crear un "Gem" que actúe siempre como revisor de contratos, dándole instrucciones fijas sobre cómo quieres que responda.</p>
+            <a href="https://gemini.google.com/gems/view" target="_blank" class="btn-herramienta">Crear un Gem</a>
         </div>
 
         <div class="card">
-            <h3>Google NotebookLM</h3>
-            <p><strong>¿Qué es?</strong> Un analista de documentos altamente confiable.</p>
-            <p><strong>Alcance:</strong> Sube tus propios PDFs, manuales o políticas. La IA responderá a tus preguntas basándose <em>exclusivamente</em> en esos documentos (sin inventar información externa). Es la forma más rápida de encontrar datos clave en archivos enormes.</p>
-            <a href="https://notebooklm.google.com/" target="_blank" class="btn-herramienta">Ir a NotebookLM</a>
+            <h3>🌐 Google Sites</h3>
+            <p><strong>¿Qué es?</strong> Constructor rápido de páginas web internas.</p>
+            <p><strong>¿Para qué usarlo?</strong> Arma portales, manuales de tu área o intranets simplemente arrastrando elementos. Es la forma más fácil de organizar y compartir enlaces clave con tu equipo sin depender del área de diseño.</p>
+            <a href="https://sites.google.com/" target="_blank" class="btn-herramienta">Crear un Sitio</a>
         </div>
 
         <div class="card">
-            <h3>Google Apps Script</h3>
-            <p><strong>¿Qué es?</strong> El motor de las automatizaciones.</p>
-            <p><strong>Alcance:</strong> Es el código (puente) que permite que las apps de Google trabajen solas. Si necesitas que al responder un formulario (Forms) se genere un PDF y se envíe por Gmail de forma totalmente automática, esta herramienta es la que lo hace posible.</p>
-            <a href="https://script.google.com/" target="_blank" class="btn-herramienta">Ir a Apps Script</a>
+            <h3>📱 Google AppSheet</h3>
+            <p><strong>¿Qué es?</strong> Creador de aplicaciones sin código.</p>
+            <p><strong>¿Para qué usarlo?</strong> Transforma una simple hoja de cálculo de Google (Sheets) en una aplicación real para el celular. Excelente para que el equipo registre datos, asistencias o inventarios desde su teléfono hacia una base centralizada.</p>
+            <a href="https://www.appsheet.com/" target="_blank" class="btn-herramienta">Diseñar una App</a>
+        </div>
+    </div>
+
+
+    <div class="nivel-seccion">
+        <h2 class="nivel-titulo"><span class="badge badge-avanzado">Nivel 3: Avanzado</span> Automatización Profunda</h2>
+        <p>Para usuarios que desean conectar aplicaciones entre sí usando scripts y programación.</p>
+    </div>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>⚙️ Google Apps Script</h3>
+            <p><strong>¿Qué es?</strong> El "motor" de las automatizaciones.</p>
+            <p><strong>¿Para qué usarlo?</strong> Escribe código en la nube para que tus apps trabajen solas. Si necesitas que al llenar un formulario se genere un PDF y se envíe automáticamente por correo, esta es la herramienta definitiva.</p>
+            <a href="https://script.google.com/" target="_blank" class="btn-herramienta">Abrir Apps Script</a>
         </div>
 
         <div class="card">
-            <h3>Google AppSheet</h3>
-            <p><strong>¿Qué es?</strong> Creador de aplicaciones sin saber programar.</p>
-            <p><strong>Alcance:</strong> Transforma una simple hoja de cálculo (Google Sheets) en una aplicación móvil o web completa. Perfecto para que los colaboradores registren datos operativos desde sus celulares y la información llegue ordenada a una base central.</p>
-            <a href="https://www.appsheet.com/" target="_blank" class="btn-herramienta">Ir a AppSheet</a>
-        </div>
-
-        <div class="card">
-            <h3>Google Workspace Studio</h3>
-            <p><strong>¿Qué es?</strong> Entorno de integraciones avanzadas.</p>
-            <p><strong>Alcance:</strong> El espacio donde se construyen complementos empresariales. Permite vincular soluciones y modelos de IA directamente dentro de Gmail, Drive o Docs, unificando los flujos de trabajo de todo el equipo en un solo lugar.</p>
+            <h3>🛠️ Google Workspace Studio</h3>
+            <p><strong>¿Qué es?</strong> Entorno de integraciones empresariales.</p>
+            <p><strong>¿Para qué usarlo?</strong> El nivel más alto para desarrolladores. Permite construir complementos que se instalan dentro de Gmail o Docs, integrando modelos de Inteligencia Artificial directamente en los flujos de trabajo de toda la empresa.</p>
             <a href="https://studio.workspace.google.com/" target="_blank" class="btn-herramienta">Ir a Workspace Studio</a>
         </div>
-
-        <div class="card">
-            <h3>Google Sites</h3>
-            <p><strong>¿Qué es?</strong> Constructor de páginas web internas.</p>
-            <p><strong>Alcance:</strong> Te permite armar portales web, intranets o centros de ayuda arrastrando y soltando elementos. Es una forma ágil de centralizar manuales, enlaces e información de tu área sin depender de diseñadores ni de código.</p>
-            <a href="https://sites.google.com/" target="_blank" class="btn-herramienta">Ir a Google Sites</a>
-        </div>
-
     </div>
+
 </div>
 
 <footer>&copy; 2026 Portal Interno Presta Innovation V</footer>
