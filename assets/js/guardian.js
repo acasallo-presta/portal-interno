@@ -25,3 +25,29 @@ function cerrarSesion() {
     sessionStorage.removeItem('token_google_ia'); // Borramos la memoria
     window.location.replace('index.html'); // Lo redirigimos a la puerta principal
 }
+
+// ==========================================
+// 4. AUTO-SOMBREADO DEL MENÚ SEGÚN LA URL
+// ==========================================
+window.addEventListener('DOMContentLoaded', () => {
+    // Obtenemos todos los enlaces del menú
+    const enlacesNav = document.querySelectorAll('nav div a');
+    
+    // Leemos en qué página estamos (ej: 'herramientas.html' o vacío si es la raíz)
+    let urlActual = window.location.pathname.split('/').pop();
+    
+    // Si la URL está vacía (como pasa a veces en el inicio), asumimos index.html
+    if (urlActual === '' || urlActual === '/') {
+        urlActual = 'index.html';
+    }
+    
+    enlacesNav.forEach(enlace => {
+        // Primero le quitamos la clase activo a todos
+        enlace.classList.remove('activo');
+        
+        // Si el enlace apunta a la página donde estamos, lo "encendemos"
+        if (enlace.getAttribute('href') === urlActual) {
+            enlace.classList.add('activo');
+        }
+    });
+});
