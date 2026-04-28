@@ -46,88 +46,82 @@
 
 <div class="modulo-contenedor">
     
-    <h1 class="modulo-titulo">🧰 Módulo 4: Tu Caja de Herramientas Inteligentes</h1>
+    <h1 class="modulo-titulo">🧰 Módulo 4: Mi primer flujo con Workspace Studio</h1>
     
     <div class="modulo-intro">
-        <p>¡Ya tienes la mentalidad y el superpoder de los prompts! Ahora conocerás los instrumentos de tu <strong>orquesta digital</strong>. Tienes herramientas de Google diseñadas para que tú mismo seas el creador de tus soluciones.</p>
+        <p><strong>¡Es hora de pasar de la teoría a la acción!</strong> En este módulo final, conocerás la plataforma principal que te permitirá conectar tus aplicaciones favoritas (Gmail, Sheets, Drive) para que trabajen por ti, sin necesidad de escribir código.</p>
     </div>
 
-    <h2 style="color: var(--verde-oscuro);">🛠️ Herramientas en tus manos: ¡Tú eres el creador!</h2>
-    <p>Úsalas para experimentar y mejorar tu área de forma inmediata:</p>
+    <h2 style="color: var(--verde-oscuro);">📍 ¿Cómo acceder a tu panel de control?</h2>
+    <p>Workspace Studio está integrado directamente en tu entorno actual de Google:</p>
+    
+    <div class="acceso-lista">
+        <div class="acceso-item">
+            <span class="acceso-num">1</span>
+            <span>Abre una <strong>Hoja de Cálculo</strong> (Sheets) o un <strong>Documento</strong> de Google.</span>
+        </div>
+        <div class="acceso-item">
+            <span class="acceso-num">2</span>
+            <span>En la barra de menú superior, haz clic en el menú <strong>Extensiones</strong>.</span>
+        </div>
+        <div class="acceso-item">
+            <span class="acceso-num">3</span>
+            <span>Selecciona <strong>Google Workspace Studio</strong>.</span>
+        </div>
+    </div>
+    <p style="font-size: 0.9rem; color: #666; font-style: italic;">Se abrirá un panel lateral derecho donde configurarás tus automatizaciones paso a paso.</p>
 
-    <div class="herramientas-user-grid">
-        <div class="tool-card">
-            <h4>✨ Gemini & Gems</h4>
-            <p>Tu asistente para redactar, idear y crear expertos personalizados para tu área.</p>
+    <h2 style="color: var(--verde-oscuro); margin-top: 50px;">⚙️ La lógica detrás del flujo</h2>
+    <p>Para crear cualquier automatización, solo debes entender estos dos conceptos:</p>
+
+    <div class="logica-container">
+        <div class="logica-box">
+            <h4>⚡ Disparador (Trigger)</h4>
+            <p style="font-size: 0.9rem; color: #555;">Es el evento que inicia todo.<br><strong>"Cuando pase esto..."</strong></p>
+            <p style="font-size: 0.8rem; color: #888;">Ej: Recibo un correo con asunto "Factura".</p>
         </div>
-        <div class="tool-card">
-            <h4>📚 NotebookLM</h4>
-            <p>Analista de documentos. Hazle preguntas solo sobre la información que subas.</p>
-        </div>
-        <div class="tool-card">
-            <h4>🔗 Workspace Studio</h4>
-            <p>Panel visual para conectar Gmail, Drive y Sheets de forma rápida.</p>
-        </div>
-        <div class="tool-card">
-            <h4>📱 AppSheet (Básico)</h4>
-            <p>Crea aplicaciones móviles sencillas para eliminar el papel o Excels desordenados.</p>
-        </div>
-        <div class="tool-card">
-            <h4>⚙️ Apps Script</h4>
-            <p>Pequeños códigos para que tus hojas de cálculo hagan acciones automáticas.</p>
-        </div>
-        <div class="tool-card">
-            <h4>🌐 Google Sites</h4>
-            <p>Páginas internas para que tu equipo encuentre todo en un solo lugar.</p>
+        <div class="flecha-logica">➡️</div>
+        <div class="logica-box">
+            <h4>🛠️ Acción (Action)</h4>
+            <p style="font-size: 0.9rem; color: #555;">Es la tarea automática.<br><strong>"...haz esto otro"</strong></p>
+            <p style="font-size: 0.8rem; color: #888;">Ej: Guarda el adjunto en Drive.</p>
         </div>
     </div>
 
-    <div class="coe-support-box">
-        <h3 style="margin-top:0; color: var(--verde-oscuro); display: flex; align-items: center; gap: 10px;">
-            🚀 ¿Cuándo pedir ayuda al COE de Automatización?
-        </h3>
-        <p>Tú tienes el poder de iniciar, pero el COE se encarga de los <strong>"pesos pesados"</strong> o de ayudarte si te quedas atascado:</p>
-        
+    <div class="tutor-ia-box">
+        <h3 style="margin-top:0; color: #1a73e8;">🤖 Tu Tutor de IA: Gemini</h3>
+        <p>No tienes que adivinar cómo configurar los pasos. Usa la IA para obtener tu manual de instrucciones personalizado.</p>
+        <strong>Copia este ejemplo de consulta:</strong>
+        <code class="prompt-texto">
+            "Actúa como experto en Workspace Studio. Quiero que cada vez que reciba un formulario de Google, se envíe una respuesta automática por Gmail y se cree una fila en Sheets. ¿Qué pasos exactos sigo en el panel lateral?"
+        </code>
+    </div>
+
+    <div class="coe-support-box" style="border-left: 6px solid #D32F2F;">
+        <h3 style="margin-top:0; color: #D32F2F;">🚀 ¿Cuándo escalar al COE de Automatización?</h3>
+        <p>El COE es tu respaldo para los retos más complejos. Debes levantar la mano cuando necesites:</p>
         <div class="coe-support-grid">
-            <div class="coe-item">
-                <strong>🤖 Automatización Total</strong>
-                Cuando necesites que un proceso se ejecute 100% solo sin intervención humana.
-            </div>
-            <div class="coe-item">
-                <strong>📊 Procesamiento Masivo</strong>
-                Extraer datos de cientos de documentos (PDFs) a la vez para consolidar bases de datos.
-            </div>
-            <div class="coe-item">
-                <strong>🔌 Conexión de Sistemas</strong>
-                Hacer que plataformas distintas (como Forms y Google Chat) hablen entre sí.
-            </div>
-            <div class="coe-item">
-                <strong>🛠️ Soporte Avanzado</strong>
-                Si tu flujo en Apps Script o AppSheet arroja un error que no sabes cómo corregir.
-            </div>
+            <div class="coe-item"><strong>Soporte Técnico:</strong> Si el flujo arroja un error o la herramienta no conecta.</div>
+            <div class="coe-item"><strong>Automatización Total:</strong> Cuando el proceso deba ejecutarse 100% solo en el servidor.</div>
+            <div class="coe-item"><strong>Procesamiento Masivo:</strong> Extraer datos de cientos de documentos al mes.</div>
+            <div class="coe-item"><strong>Sistemas Externos:</strong> Conectar con CRM o bases de datos fuera de Google.</div>
         </div>
     </div>
 
-    <div class="reto-postit" style="margin-top: 50px;">
-        <h3>🎯 Reto Práctico: El Selector de Superpoderes</h3>
-        <p>¿Sabes qué herramienta usar para cada situación? Este test validará tu kit antes del gran final.</p>
-        
-        <p><strong>Instrucciones:</strong></p>
-        <ul>
-            <li>Se te presentarán 3 situaciones de oficina reales.</li>
-            <li>Selecciona la herramienta adecuada y si lo harías tú o lo escalarías al COE.</li>
+    <div class="reto-postit" style="margin-top: 50px; background: #e6fffa; border-top: 5px solid var(--verde-primario);">
+        <h3 style="color: var(--verde-oscuro);">🎯 Tu Reto Final: Mi Plan de Automatización</h3>
+        <p>Antes de empezar a construir, registra tu idea sólida. Este registro completa tu certificación.</p>
+        <ul style="font-size: 0.95rem;">
+            <li><strong>Problema:</strong> ¿Qué tarea manual vas a eliminar?</li>
+            <li><strong>Herramientas:</strong> ¿Qué apps conectarás? (Ej: Gmail + Sheets).</li>
+            <li><strong>Consulta IA:</strong> ¿Qué le preguntarás a Gemini?</li>
         </ul>
-        
-        <a href="#" target="_blank" class="reto-btn">📝 Realizar Test de Herramientas</a>
+        <a href="#" target="_blank" class="reto-btn" style="background: var(--verde-oscuro);">📝 Registrar mi Plan de Automatización</a>
     </div>
-
-    <p style="text-align: center; color: var(--verde-medio); font-weight: bold; margin-top: 30px;">
-        ¡Excelente! Ya conoces tus herramientas. En el Módulo 5 (Final), daremos el paso definitivo: planificar tu primera automatización real.
-    </p>
 
     <div class="navegacion-modulos">
         <a href="modulo3.html" class="btn-nav-secundario">⬅️ Anterior: Módulo 3</a>
-        <a href="modulo5.html" class="btn-principal" style="margin-top: 0; padding: 10px 25px;">Finalizar: Módulo 5 ➡️</a>
+        <a href="cursos.html" class="btn-principal" style="margin-top: 0; background: var(--verde-oscuro);">✅ Finalizar Ruta</a>
     </div>
 
 </div>
