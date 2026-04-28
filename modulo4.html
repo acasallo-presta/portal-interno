@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presta Innovation V - Módulo 4</title>
+    
+    <script>
+        if (sessionStorage.getItem('token_google_ia')) {
+            document.documentElement.classList.add('sesion-activa');
+            try {
+                const token = sessionStorage.getItem('token_google_ia');
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                window.nombreUsuarioPrerender = "Hola, " + payload.name;
+            } catch(e) {}
+        } else {
+            window.location.replace('index.html');
+        }
+    </script>
+    
+    <style>
+        html:not(.sesion-activa) { display: none; }
+    </style>
+    
+    <script src="assets/js/guardian.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">Presta Innovation V</a>
+    <div>
+        <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;">
+            <script>
+                if(window.nombreUsuarioPrerender) {
+                    document.write(window.nombreUsuarioPrerender);
+                }
+            </script>
+        </span>
+        <a href="index.html">Inicio</a>
+        <a href="herramientas.html">Herramientas</a>
+        <a href="cursos.html" class="activo">Cursos</a>
+        <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</nav>
+
+<div class="modulo-contenedor">
+    
+    <h1 class="modulo-titulo">🧰 Módulo 4: Tu Caja de Herramientas Inteligentes</h1>
+    
+    <div class="modulo-intro">
+        <p>¡Ya tienes la mentalidad y el superpoder de los prompts! Ahora conocerás los instrumentos de tu <strong>orquesta digital</strong>. Tienes herramientas de Google diseñadas para que tú mismo seas el creador de tus soluciones.</p>
+    </div>
+
+    <h2 style="color: var(--verde-oscuro);">🛠️ Herramientas en tus manos: ¡Tú eres el creador!</h2>
+    <p>Úsalas para experimentar y mejorar tu área de forma inmediata:</p>
+
+    <div class="herramientas-user-grid">
+        <div class="tool-card">
+            <h4>✨ Gemini & Gems</h4>
+            <p>Tu asistente para redactar, idear y crear expertos personalizados para tu área.</p>
+        </div>
+        <div class="tool-card">
+            <h4>📚 NotebookLM</h4>
+            <p>Analista de documentos. Hazle preguntas solo sobre la información que subas.</p>
+        </div>
+        <div class="tool-card">
+            <h4>🔗 Workspace Studio</h4>
+            <p>Panel visual para conectar Gmail, Drive y Sheets de forma rápida.</p>
+        </div>
+        <div class="tool-card">
+            <h4>📱 AppSheet (Básico)</h4>
+            <p>Crea aplicaciones móviles sencillas para eliminar el papel o Excels desordenados.</p>
+        </div>
+        <div class="tool-card">
+            <h4>⚙️ Apps Script</h4>
+            <p>Pequeños códigos para que tus hojas de cálculo hagan acciones automáticas.</p>
+        </div>
+        <div class="tool-card">
+            <h4>🌐 Google Sites</h4>
+            <p>Páginas internas para que tu equipo encuentre todo en un solo lugar.</p>
+        </div>
+    </div>
+
+    <div class="coe-support-box">
+        <h3 style="margin-top:0; color: var(--verde-oscuro); display: flex; align-items: center; gap: 10px;">
+            🚀 ¿Cuándo pedir ayuda al COE de Automatización?
+        </h3>
+        <p>Tú tienes el poder de iniciar, pero el COE se encarga de los <strong>"pesos pesados"</strong> o de ayudarte si te quedas atascado:</p>
+        
+        <div class="coe-support-grid">
+            <div class="coe-item">
+                <strong>🤖 Automatización Total</strong>
+                Cuando necesites que un proceso se ejecute 100% solo sin intervención humana.
+            </div>
+            <div class="coe-item">
+                <strong>📊 Procesamiento Masivo</strong>
+                Extraer datos de cientos de documentos (PDFs) a la vez para consolidar bases de datos.
+            </div>
+            <div class="coe-item">
+                <strong>🔌 Conexión de Sistemas</strong>
+                Hacer que plataformas distintas (como Forms y Google Chat) hablen entre sí.
+            </div>
+            <div class="coe-item">
+                <strong>🛠️ Soporte Avanzado</strong>
+                Si tu flujo en Apps Script o AppSheet arroja un error que no sabes cómo corregir.
+            </div>
+        </div>
+    </div>
+
+    <div class="reto-postit" style="margin-top: 50px;">
+        <h3>🎯 Reto Práctico: El Selector de Superpoderes</h3>
+        <p>¿Sabes qué herramienta usar para cada situación? Este test validará tu kit antes del gran final.</p>
+        
+        <p><strong>Instrucciones:</strong></p>
+        <ul>
+            <li>Se te presentarán 3 situaciones de oficina reales.</li>
+            <li>Selecciona la herramienta adecuada y si lo harías tú o lo escalarías al COE.</li>
+        </ul>
+        
+        <a href="#" target="_blank" class="reto-btn">📝 Realizar Test de Herramientas</a>
+    </div>
+
+    <p style="text-align: center; color: var(--verde-medio); font-weight: bold; margin-top: 30px;">
+        ¡Excelente! Ya conoces tus herramientas. En el Módulo 5 (Final), daremos el paso definitivo: planificar tu primera automatización real.
+    </p>
+
+    <div class="navegacion-modulos">
+        <a href="modulo3.html" class="btn-nav-secundario">⬅️ Anterior: Módulo 3</a>
+        <a href="modulo5.html" class="btn-principal" style="margin-top: 0; padding: 10px 25px;">Finalizar: Módulo 5 ➡️</a>
+    </div>
+
+</div>
+
+<footer>&copy; 2026 Portal Interno Presta Innovation V</footer>
+
+</body>
+</html>
