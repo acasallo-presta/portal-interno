@@ -30,32 +30,36 @@ function cerrarSesion() {
 // 4. AUTO-SOMBREADO INTELIGENTE DEL MENÚ
 // ==========================================
 window.addEventListener('DOMContentLoaded', () => {
-    // Obtenemos solo los enlaces que están dentro del div del menú (Inicio, Herramientas, Cursos)
+    // Obtenemos todos los enlaces dentro del div del menú
     const enlacesNav = document.querySelectorAll('nav div a');
     
-    // Obtenemos la URL actual y la limpiamos (quitamos la barra inicial y el ".html" si lo tiene)
-    // Ejemplo: "/herramientas" o "/herramientas.html" se convierte en "herramientas"
+    // Obtenemos la URL actual limpia (sin dominio, sin barras extras y sin .html)
+    // Ejemplo: "/modulo4" o "/modulo4.html" -> "modulo4"
     let urlActual = window.location.pathname.toLowerCase().replace(/^\//, '').replace('.html', '');
     
-    // Si la URL está vacía, significa que estamos en la raíz (Inicio)
+    // Si la URL está vacía, estamos en el Inicio
     if (urlActual === '') {
         urlActual = 'index';
     }
     
     enlacesNav.forEach(enlace => {
-        // Le quitamos la clase activo a todos por defecto
+        // Limpiamos la clase activo antes de evaluar
         enlace.classList.remove('activo');
         
-        // Obtenemos a dónde apunta el botón y lo limpiamos también
+        // Obtenemos a dónde apunta el enlace y lo limpiamos
         let hrefEnlace = enlace.getAttribute('href').replace('.html', '');
         
-        // REGLA 1: Coincidencia exacta (ej: 'herramientas' === 'herramientas')
+        // REGLA 1: Coincidencia exacta (Inicio, Herramientas, Cursos)
         let esCoincidenciaExacta = (hrefEnlace === urlActual);
         
-        // REGLA 2: Es una subpágina de cursos (ej: la URL es 'curso-introductorio' y el botón es 'cursos')
-        let esSubpaginaCursos = (urlActual.startsWith('curso-') && hrefEnlace === 'cursos');
+        // REGLA 2: Es una subpágina de cursos
+        // Si la URL actual contiene "modulo" o "curso-" y el botón es "cursos"
+        let esSubpaginaCursos = (
+            (urlActual.includes('modulo') || urlActual.includes('curso')) && 
+            hrefEnlace === 'cursos'
+        );
         
-        // Si cumple cualquiera de las dos reglas, encendemos el botón
+        // Si cumple cualquiera de las dos, sombreamos el botón
         if (esCoincidenciaExacta || esSubpaginaCursos) {
             enlace.classList.add('activo');
         }
