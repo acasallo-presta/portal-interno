@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presta Innovation V - Módulo 3</title>
+    
+    <script>
+        if (sessionStorage.getItem('token_google_ia')) {
+            document.documentElement.classList.add('sesion-activa');
+            try {
+                const token = sessionStorage.getItem('token_google_ia');
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                window.nombreUsuarioPrerender = "Hola, " + payload.name;
+            } catch(e) {}
+        } else {
+            window.location.replace('index.html');
+        }
+    </script>
+    
+    <style>
+        html:not(.sesion-activa) { display: none; }
+    </style>
+    
+    <script src="assets/js/guardian.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">Presta Innovation V</a>
+    <div>
+        <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;">
+            <script>
+                if(window.nombreUsuarioPrerender) {
+                    document.write(window.nombreUsuarioPrerender);
+                }
+            </script>
+        </span>
+        <a href="index.html">Inicio</a>
+        <a href="herramientas.html">Herramientas</a>
+        <a href="cursos.html" class="activo">Cursos</a>
+        <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</nav>
+
+<div class="modulo-contenedor">
+    
+    <h1 class="modulo-titulo">💬 Módulo 3: El Arte de Pedir (Prompts)</h1>
+    
+    <div class="modulo-intro">
+        <p><strong>¡Bienvenido al tercer paso!</strong> Ya tienes una tarea identificada y validada. Ahora, necesitas a tu "Cerebro" (la IA) para que te ayude a resolverla. Saber comunicarte con Google Gemini es, literalmente, tu nuevo <strong>superpoder profesional</strong>.</p>
+    </div>
+
+    <div class="caja-copiloto" style="background-color: var(--verde-oscuro); text-align: left; margin-bottom: 40px;">
+        <h3 style="color: var(--verde-primario); margin-top: 0;">🧐 ¿Qué es un Prompt?</h3>
+        <p>Es simplemente la instrucción que le escribes a la IA. Imagina que la IA es un <strong>becario brillante</strong> que acaba de llegar hoy: no conoce tu área ni puede leerte la mente. Si la instrucción es pobre, el resultado será pobre.</p>
+    </div>
+
+    <h2 style="color: var(--verde-oscuro); text-align: center;">🧪 La Fórmula Mágica: C-T-F-T</h2>
+    <p style="text-align: center; color: #555;">Asegúrate de incluir estos 4 elementos en cada mensaje para obtener resultados perfectos:</p>
+
+    <div class="ctft-grid">
+        <div class="ctft-card">
+            <h4>👤 Contexto</h4>
+            <p>¿Quién es la IA? Dale un rol. <br><em>"Actúa como analista de RH..."</em></p>
+        </div>
+        <div class="ctft-card">
+            <h4>🎯 Tarea</h4>
+            <p>¿Qué debe hacer exactamente? <br><em>"Redacta un correo de bienvenida..."</em></p>
+        </div>
+        <div class="ctft-card">
+            <h4>📄 Formato</h4>
+            <p>¿Cómo quieres los datos? <br><em>"En 3 párrafos y viñetas..."</em></p>
+        </div>
+        <div class="ctft-card">
+            <h4>🗣️ Tono</h4>
+            <p>¿Cuál es la actitud? <br><em>"Usa un tono cálido y profesional."</em></p>
+        </div>
+    </div>
+
+    <h2 style="color: var(--verde-oscuro); margin-top: 50px;">🔄 El Antes y el Después</h2>
+    <div class="comparativa-container">
+        <div class="prompt-ejemplo pobre">
+            <span class="prompt-tag tag-rojo">❌ PROMPT POBRE</span>
+            <p style="margin:0; font-weight: bold;">Lo que la mayoría hace:</p>
+            <code class="prompt-texto">"Hazme un correo para los nuevos."</code>
+            <p style="font-size: 0.85rem; margin-top: 10px; color: #9B2C2C;"><strong>Resultado:</strong> Un texto genérico que tendrás que reescribir.</p>
+        </div>
+
+        <div class="prompt-ejemplo maestro">
+            <span class="prompt-tag tag-verde">✅ PROMPT MAESTRO</span>
+            <p style="margin:0; font-weight: bold;">Usando CTFT:</p>
+            <code class="prompt-texto">"Actúa como líder de equipo. Redacta un correo de bienvenida para los 5 nuevos colaboradores que entran hoy. Usa viñetas para la agenda. Tono entusiasta."</code>
+            <p style="font-size: 0.85rem; margin-top: 10px; color: #22543D;"><strong>Resultado:</strong> Un correo perfecto, listo para enviar.</p>
+        </div>
+    </div>
+
+    <div class="reto-postit">
+        <h3>🎯 Tu Reto: El Prompt Maestro</h3>
+        <p>Toma la tarea que validaste en el módulo anterior y crea tu instrucción maestra:</p>
+        <p style="background: rgba(255,255,255,0.5); padding: 15px; border-radius: 8px; font-style: italic;">
+            "Actúa como [Contexto]. Necesito que [Tarea]. Entrégamelo en formato [Formato], con un tono [Tono]."
+        </p>
+        <a href="#" target="_blank" class="reto-btn">📝 Registrar mi Prompt Maestro</a>
+    </div>
+
+    <div class="navegacion-modulos">
+        <a href="modulo2.html" class="btn-nav-secundario">⬅️ Anterior: Módulo 2</a>
+        <a href="modulo4.html" class="btn-principal" style="margin-top: 0; padding: 10px 25px;">Siguiente Módulo ➡️</a>
+    </div>
+
+</div>
+
+<footer>&copy; 2026 Portal Interno Presta Innovation V</footer>
+
+</body>
+</html>
