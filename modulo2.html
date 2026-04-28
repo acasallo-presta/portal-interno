@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presta Innovation V - Módulo 2</title>
+    
+    <script>
+        if (sessionStorage.getItem('token_google_ia')) {
+            document.documentElement.classList.add('sesion-activa');
+            try {
+                const token = sessionStorage.getItem('token_google_ia');
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                window.nombreUsuarioPrerender = "Hola, " + payload.name;
+            } catch(e) {}
+        } else {
+            window.location.replace('index.html'); // Si no hay sesión, lo saca
+        }
+    </script>
+    
+    <style>
+        html:not(.sesion-activa) { display: none; }
+    </style>
+    
+    <script src="assets/js/guardian.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">Presta Innovation V</a>
+    <div>
+        <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;">
+            <script>
+                if(window.nombreUsuarioPrerender) {
+                    document.write(window.nombreUsuarioPrerender);
+                }
+            </script>
+        </span>
+        <a href="index.html">Inicio</a>
+        <a href="herramientas.html">Herramientas</a>
+        <a href="cursos.html" class="activo">Cursos</a>
+        <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</nav>
+
+<div class="modulo-contenedor">
+    
+    <h1 class="modulo-titulo">🕵️‍♂️ Módulo 2: Cazadores de Tareas</h1>
+    
+    <div class="modulo-intro">
+        <p><strong>¡Bienvenido de nuevo!</strong> En el módulo anterior escribiste en tu post-it esa tarea aburrida que te encantaría delegar. Hoy vamos a descubrir si tu "copiloto" tecnológico realmente puede hacerse cargo de ella.</p>
+        <p>No todas las tareas nacieron para ser automatizadas. A veces, intentar automatizar un proceso complejo que requiere mucha empatía o criterio humano puede generar más problemas que soluciones.</p>
+        <p>Para saber qué tareas son las candidatas perfectas, hoy aprenderás a usar dos herramientas mentales: <strong>La regla de las "3 R"</strong> y la <strong>limpieza previa</strong>.</p>
+    </div>
+
+    <h2 style="color: var(--verde-oscuro); margin-bottom: 20px;">🔍 La prueba de fuego: La regla de las "3 R"</h2>
+    <p style="color: #555; margin-bottom: 30px; font-size: 1.05rem;">Para que la automatización (tu "músculo" tecnológico) funcione bien, la tarea debe cumplir con estas tres condiciones obligatorias:</p>
+
+    <div class="comparacion-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        
+        <div class="tarjeta-concepto" style="border-top: 5px solid #E91E63; background-color: #FCE4EC;">
+            <h3 style="color: #C2185B; font-size: 1.2rem;">🔄 Repetitiva <br><small>(Frecuencia)</small></h3>
+            <p>¿Es algo que haces varias veces a la semana o al mes?</p>
+            <p style="font-size: 0.95rem; color: #555;">Si es un reporte que haces una sola vez al año, probablemente no valga la pena el esfuerzo de automatizarlo. Debe ser algo que te robe tiempo constantemente.</p>
+        </div>
+
+        <div class="tarjeta-concepto" style="border-top: 5px solid #9C27B0; background-color: #F3E5F5;">
+            <h3 style="color: #7B1FA2; font-size: 1.2rem;">📆 Rutinaria <br><small>(Predecible)</small></h3>
+            <p>¿El proceso es siempre el mismo?</p>
+            <p style="font-size: 0.95rem; color: #555;">Es decir, siempre abres el mismo correo, descargas el mismo tipo de archivo y lo pegas en la misma tabla de Google Sheets. No hay sorpresas.</p>
+        </div>
+
+        <div class="tarjeta-concepto" style="border-top: 5px solid #00BCD4; background-color: #E0F7FA;">
+            <h3 style="color: #0097A6; font-size: 1.2rem;">📏 Reglas Claras <br><small>(Sin corazonadas)</small></h3>
+            <p>¿Podrías explicarle cómo hacerlo a un niño de 10 años paso a paso?</p>
+            <p style="font-size: 0.95rem; color: #555;">Las computadoras no tienen intuición. Necesitan instrucciones como: <em>"Si la factura es mayor a $500, envíala al jefe; si es menor, apruébala"</em>.</p>
+        </div>
+    </div>
+
+    <div style="background: #F8F9FA; border-left: 4px solid var(--verde-primario); padding: 20px; border-radius: 8px; margin-bottom: 50px;">
+        <p style="margin: 0; color: #444; font-size: 1.05rem;">💡 <strong>Ejemplo de un candidato ideal:</strong> <br>
+        "Todos los viernes <em>(Repetitiva)</em> descargo los resultados de una encuesta <em>(Rutinaria)</em> y envío un correo de agradecimiento a los que calificaron con puntaje máximo <em>(Reglas Claras)</em>."</p>
+    </div>
+
+    <div class="caja-copiloto" style="background-color: var(--verde-oscuro); text-align: left;">
+        <h3 style="color: var(--verde-primario);"><span style="font-size: 1.5rem;">🧹</span> Ordenar la casa antes de meter tecnología</h3>
+        <p style="font-style: italic; color: #fff; margin-bottom: 20px;">"Automatizar un proceso ineficiente solo multiplicará la ineficiencia".</p>
+        <p style="color: #E0E6ED;">Antes de intentar automatizarlo, revisa tu proceso y pregúntate por qué haces cada paso:</p>
+        <ul style="color: #E0E6ED; margin-top: 10px; margin-bottom: 20px;">
+            <li>¿Realmente necesitas imprimir ese PDF para volver a escanearlo?</li>
+            <li>¿Haces este paso porque aporta valor o porque "siempre se ha hecho así"?</li>
+        </ul>
+        <p style="color: var(--verde-primario); font-weight: bold; margin-bottom: 0;">El secreto: Simplifica el proceso y elimina los pasos inútiles de forma manual antes de intentar usar la tecnología. ¡A veces la mejor automatización es simplemente dejar de hacer un paso que no servía para nada!</p>
+    </div>
+
+    <div class="reto-postit">
+        <h3>🎯 Tu Reto Práctico: El Filtro (Entregable)</h3>
+        <p>Es momento de validar la tarea que elegiste en el Módulo 1. Pásala por el filtro de las "3 R" y asegúrate de que sea una candidata ganadora. Una vez que estés seguro de que es Repetitiva, Rutinaria y con Reglas Claras, regístrala oficialmente.</p>
+        
+        <p><strong>Instrucciones:</strong></p>
+        <ul>
+            <li>Haz clic en el botón de abajo.</li>
+            <li>Describe brevemente la tarea que has filtrado.</li>
+            <li>Confirma que cumple con las "3 R".</li>
+        </ul>
+        
+        <a href="#" target="_blank" class="reto-btn">📝 Llenar mi Post-it Virtual</a>
+        <p style="font-size: 0.85rem; color: #777; margin-top: 15px; margin-bottom: 0;">(Al llenar este formulario, tu idea quedará guardada para que en los siguientes módulos aprendas a darle vida).</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <h4 style="color: var(--verde-oscuro); font-size: 1.2rem;">¿Tu tarea pasó la prueba?</h4>
+        <p style="color: #555; margin-bottom: 5px;">✅ <strong>Si la respuesta es SÍ:</strong> ¡Excelente! Tienes oro en tus manos.</p>
+        <p style="color: #555; margin-bottom: 20px;">❌ <strong>Si la respuesta es NO:</strong> No te preocupes. Busca otra tarea más administrativa en tu día a día y vuelve a pasarle el filtro.</p>
+        
+        <p style="color: var(--verde-primario); font-weight: bold; font-size: 1.1rem;">¡Nos vemos en el Módulo 3, donde aprenderemos cómo hablarle al "Cerebro" de tu nuevo equipo para que te ayude a diseñar la solución!</p>
+    </div>
+
+    <div class="navegacion-modulos">
+        <a href="modulo1.html" class="btn-nav-secundario">⬅️ Anterior: Módulo 1</a>
+        <a href="modulo3.html" class="btn-principal" style="margin-top: 0; padding: 10px 25px;">Siguiente Módulo ➡️</a>
+    </div>
+
+</div>
+
+<footer>&copy; 2026 Portal Interno Presta Innovation V</footer>
+
+</body>
+</html>
