@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presta Innovation V - Módulo 1</title>
+    
+    <script>
+        if (sessionStorage.getItem('token_google_ia')) {
+            document.documentElement.classList.add('sesion-activa');
+            try {
+                const token = sessionStorage.getItem('token_google_ia');
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                window.nombreUsuarioPrerender = "Hola, " + payload.name;
+            } catch(e) {}
+        } else {
+            window.location.replace('index.html'); // Si no hay sesión, lo saca
+        }
+    </script>
+    
+    <style>
+        html:not(.sesion-activa) { display: none; }
+    </style>
+    
+    <script src="assets/js/guardian.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">Presta Innovation V</a>
+    <div>
+        <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;">
+            <script>
+                if(window.nombreUsuarioPrerender) {
+                    document.write(window.nombreUsuarioPrerender);
+                }
+            </script>
+        </span>
+        <a href="index.html">Inicio</a>
+        <a href="herramientas.html">Herramientas</a>
+        <a href="cursos.html" class="activo">Cursos</a> <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</nav>
+
+<div class="modulo-contenedor">
+    
+    <h1 class="modulo-titulo">🤖 Módulo 1: Desmitificando la IA y la Automatización</h1>
+    
+    <div class="modulo-intro">
+        <p><strong>¡Te damos la bienvenida a tu primer paso hacia un trabajo más inteligente!</strong></p>
+        <p>Probablemente has escuchado en las noticias o en pasillos que "la tecnología va a cambiarlo todo" o incluso el viejo mito de que "la IA nos quitará el trabajo". <strong>Hoy vamos a derribar ese mito.</strong></p>
+        <p>La tecnología que implementamos en el COE no busca reemplazarte; busca quitarte el trabajo aburrido para que puedas brillar en lo que realmente importa. Para empezar, necesitamos entender a nuestros dos nuevos mejores amigos. A menudo se usan como sinónimos, pero tienen roles muy diferentes. Piénsalo como un equipo donde uno es el "Cerebro" y el otro es el "Músculo".</p>
+    </div>
+
+    <div class="comparacion-grid">
+        <div class="tarjeta-concepto tarjeta-cerebro">
+            <h3 style="color: #4A90E2;">🧠 La Inteligencia Artificial</h3>
+            <p>Es la parte que "piensa", analiza y crea. No mueve cosas de un lado a otro por sí sola, pero es excelente entendiendo contextos.</p>
+            <ul>
+                <li><strong>Lo que hace:</strong> Lee, resume, redacta, analiza datos complejos y propone ideas.</li>
+                <li><strong>Ejemplo:</strong> Pedirle a Google Gemini que lea un reporte largo en PDF y te resuma los 3 puntos clave en un lenguaje sencillo.</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta-concepto tarjeta-musculo">
+            <h3 style="color: #F5A623;">⚙️ La Automatización</h3>
+            <p>Es la parte que "hace" y ejecuta tareas repetitivas sin cansarse jamás. No piensa, solo sigue reglas estrictas a la perfección.</p>
+            <ul>
+                <li><strong>Lo que hace:</strong> Mueve archivos, copia información de una celda a otra, envía correos a una hora programada.</li>
+                <li><strong>Ejemplo:</strong> Una regla que toma todos los correos que dicen "Factura" y guarda el archivo adjunto automáticamente en una carpeta.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="caja-super-equipo">
+        <h3 style="margin-top: 0; color: var(--verde-oscuro);">🤝 El Súper-equipo en acción</h3>
+        <p>El verdadero valor ocurre cuando los juntas. Imagina que recibes quejas de clientes por correo:</p>
+        <ul style="margin-bottom: 0; color: #444;">
+            <li style="margin-bottom: 10px;"><strong>La IA (Cerebro)</strong> lee el correo, entiende si el cliente está enojado y redacta una propuesta de disculpa profesional.</li>
+            <li><strong>La Automatización (Músculo)</strong> toma ese texto, lo pone en un correo y lo envía automáticamente a tu bandeja de borradores para que tú solo tengas que darle a "Aprobar".</li>
+        </ul>
+    </div>
+
+    <div class="caja-copiloto">
+        <h3>👨‍✈️ La Mentalidad de "Copiloto"</h3>
+        <p>A partir de hoy, te invitamos a adoptar la mentalidad de Copiloto. Piensa en estas herramientas como un asistente personal (o un becario muy rápido y aplicado) que trabaja para ti.</p>
+        <br>
+        <p><strong>Tu rol ya no es hacer el trabajo repetitivo de "copiar y pegar"; tu nuevo rol es ser el piloto.</strong> Tú eres quien tiene el criterio humano, la empatía, el conocimiento del negocio y quien toma las decisiones finales. El copiloto solo prepara el terreno para que tú despegues.</p>
+    </div>
+
+    <div class="reto-postit">
+        <h3>🎯 Tu Primer Reto: El Post-it Virtual (Entregable)</h3>
+        <p>Para terminar este módulo de 5 minutos, vamos a pasar a la acción. Tómate 60 segundos para pensar en tu semana laboral pasada y responde esta pregunta:</p>
+        <p><em>"Si tuvieras un asistente virtual sentado a tu lado hoy mismo, ¿cuál es la tarea más aburrida y repetitiva que le entregarías sin pensarlo dos veces?"</em></p>
+        
+        <p><strong>Instrucciones:</strong></p>
+        <ul>
+            <li>Piensa en esa tarea (Ej. "Pasar los datos del reporte semanal de ventas de un PDF a una hoja de Excel").</li>
+            <li>Escríbela en el formulario oficial del COE haciendo clic en el botón de abajo.</li>
+        </ul>
+        
+        <a href="#" target="_blank" class="reto-btn">📝 Llenar mi Post-it Virtual</a>
+    </div>
+    
+    <p style="text-align: center; color: #666; font-style: italic;">¡Felicidades! Acabas de identificar tu primera oportunidad de mejora. Nos vemos en el Módulo 2 para descubrir si esa tarea cumple con las reglas para ser automatizada.</p>
+
+    <div class="navegacion-modulos">
+        <a href="cursos.html" class="btn-nav-secundario">⬅️ Volver al Catálogo</a>
+        <a href="modulo2.html" class="btn-principal" style="margin-top: 0; padding: 10px 25px;">Siguiente Módulo ➡️</a>
+    </div>
+
+</div>
+
+<footer>&copy; 2026 Portal Interno Presta Innovation V</footer>
+
+</body>
+</html>
