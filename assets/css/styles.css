@@ -784,3 +784,135 @@ nav a.activo {
     display: block; 
     margin-bottom: 12px; 
 }
+
+/* =========================================
+   ESTILOS PARA EL CONTENIDO DE LOS MÓDULOS
+   ========================================= */
+.modulo-contenedor { 
+    max-width: 800px; 
+    margin: 40px auto; 
+    background: white; 
+    padding: 50px; 
+    border-radius: 15px; 
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05); 
+}
+
+.modulo-titulo { 
+    color: var(--verde-oscuro); 
+    border-bottom: 3px solid var(--verde-primario); 
+    padding-bottom: 15px; 
+    margin-bottom: 25px; 
+    font-size: 2rem;
+}
+
+.modulo-intro { 
+    font-size: 1.1rem; 
+    color: #444; 
+    line-height: 1.7; 
+    margin-bottom: 40px; 
+}
+
+/* Tarjetas comparativas (Cerebro vs Músculo) */
+.comparacion-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+    margin-bottom: 40px; 
+}
+
+.tarjeta-concepto { 
+    padding: 25px; 
+    border-radius: 12px; 
+    border: 1px solid #eee; 
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-concepto:hover { transform: translateY(-5px); }
+
+.tarjeta-cerebro { 
+    background-color: #F4F8FB; /* Azul muy suave */
+    border-top: 5px solid #4A90E2; 
+}
+
+.tarjeta-musculo { 
+    background-color: #FCF9F2; /* Naranja/Amarillo muy suave */
+    border-top: 5px solid #F5A623; 
+}
+
+.tarjeta-concepto h3 { margin-top: 0; font-size: 1.3rem; color: #333;}
+.tarjeta-concepto strong { color: #222; }
+.tarjeta-concepto ul { padding-left: 20px; color: #555; line-height: 1.6; }
+.tarjeta-concepto li { margin-bottom: 10px; }
+
+/* Caja de Súper-equipo */
+.caja-super-equipo { 
+    background: var(--verde-claro); 
+    padding: 30px; 
+    border-radius: 12px; 
+    border-left: 5px solid var(--verde-primario); 
+    margin-bottom: 50px; 
+}
+
+/* Caja de Mentalidad Copiloto (Oscura para destacar) */
+.caja-copiloto { 
+    background: #1F2D3D; 
+    color: white; 
+    padding: 40px; 
+    border-radius: 15px; 
+    margin-bottom: 50px; 
+    text-align: center; 
+    box-shadow: 0 10px 30px rgba(31, 45, 61, 0.2);
+}
+
+.caja-copiloto h3 { color: var(--verde-primario); margin-top: 0; font-size: 1.6rem; }
+.caja-copiloto p { color: #E0E6ED; font-size: 1.1rem; margin-bottom: 0; line-height: 1.6; }
+
+/* Diseño de Post-it para el Reto */
+.reto-postit { 
+    background: #FFF9C4; /* Color amarillo post-it */
+    padding: 40px; 
+    border-radius: 2px 15px 15px 15px; 
+    position: relative; 
+    box-shadow: 4px 6px 15px rgba(0,0,0,0.1); 
+    margin-bottom: 30px; 
+}
+
+/* Efecto de la esquina doblada del Post-it */
+.reto-postit::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 0; 
+    border-width: 20px 20px 0 0; 
+    border-style: solid; 
+    border-color: #FBC02D white white #FBC02D; 
+} 
+
+.reto-postit h3 { color: #E65100; margin-top: 0; font-size: 1.4rem; }
+.reto-postit p, .reto-postit li { color: #555; font-size: 1.05rem; }
+
+.reto-btn { 
+    display: inline-flex; 
+    align-items: center;
+    gap: 8px;
+    background: #E65100; 
+    color: white; 
+    padding: 12px 25px; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    margin-top: 20px; 
+    transition: 0.3s; 
+}
+.reto-btn:hover { background: #BF360C; transform: scale(1.05); }
+
+/* Botones para avanzar o retroceder */
+.navegacion-modulos { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: 40px; 
+    border-top: 1px solid #eee; 
+    padding-top: 30px; 
+}
+
+.btn-nav-secundario { color: #666; text-decoration: none; font-weight: bold; padding: 10px 20px; border: 1px solid #ccc; border-radius: 30px; transition: 0.3s;}
+.btn-nav-secundario:hover { background: #eee; color: #333; }
