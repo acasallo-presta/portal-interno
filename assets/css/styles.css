@@ -916,3 +916,78 @@ nav a.activo {
 
 .btn-nav-secundario { color: #666; text-decoration: none; font-weight: bold; padding: 10px 20px; border: 1px solid #ccc; border-radius: 30px; transition: 0.3s;}
 .btn-nav-secundario:hover { background: #eee; color: #333; }
+
+
+/* =========================================
+   ESTILOS ESPECÍFICOS: MÓDULO 3 (PROMPTS)
+   ========================================= */
+
+/* Cuadrícula de la Fórmula CTFT */
+.formula-ctft {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.pilar-formula {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    border-top: 4px solid var(--verde-primario);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.pilar-formula h4 {
+    margin-top: 0;
+    color: var(--verde-oscuro);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Comparación de Prompts (Antes y Después) */
+.comparacion-prompts {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.prompt-box {
+    flex: 1;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.prompt-pobre {
+    background-color: #FFF5F5;
+    border: 1px solid #FED7D7;
+}
+
+.prompt-maestro {
+    background-color: #F0FFF4;
+    border: 1px solid #C6F6D5;
+}
+
+.label-prompt {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.label-rojo { background: #FEB2B2; color: #9B2C2C; }
+.label-verde { background: #9AE6B4; color: #22543D; }
+
+/* Contenedor de Slide para el Módulo */
+.slide-deck-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 0;
+}
