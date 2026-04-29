@@ -1150,3 +1150,47 @@ nav a.activo {
     margin-top: 15px;
     border: 1px solid #dce3eb;
 }
+
+/* =========================================
+   SECCIÓN COE (ESCALAMIENTO)
+   ========================================= */
+.seccion-coe {
+    background-color: #fdf2f2; /* Rojo muy sutil de fondo */
+    padding: 60px 0;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.coe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.coe-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border-top: 5px solid #d32f2f; /* Rojo Presta para escalamiento */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.coe-card:hover {
+    transform: translateY(-5px);
+}
+
+.coe-card h4 {
+    color: #b71c1c;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.coe-card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+}
