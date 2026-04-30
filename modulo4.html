@@ -6,7 +6,7 @@
     <title>Módulo 4 - Mi Centro de Control</title>
     
     <script>
-        // Protección de ruta
+        // Verificación de sesión rápida
         if (!sessionStorage.getItem('token_google_ia')) {
             window.location.replace('index.html');
         }
@@ -29,105 +29,120 @@
 
 <div class="modulo-contenedor">
     <h1 class="modulo-titulo">🧰 Módulo 4: Mi Centro de Control en Workspace Studio</h1>
-
+    
     <div class="modulo-intro">
-        <p><strong>¡Bienvenido al corazón de la automatización!</strong> Hoy vas a tomar el control. Entraremos a la plataforma visual donde conectarás tus herramientas para que trabajen por ti.</p>
+        <p>¡Bienvenido al corazón de la automatización! Hasta ahora has aprendido la teoría, pero hoy vas a tomar el control total. Entraremos a la plataforma visual donde conectarás tus herramientas para que trabajen por ti.</p>
     </div>
 
-    <div class="caja-herramienta-link">
-        <h3>📍 Paso 1: Ingresa a tu Centro de Mando</h3>
-        <p>Haz clic en el botón para abrir la herramienta en una pestaña nueva:</p>
-        <a href="https://studio.workspace.google.com" target="_blank" class="btn-principal" style="background: var(--verde-primario); color: var(--verde-oscuro); margin-top: 10px;">🚀 Abrir Google Workspace Studio</a>
-    </div>
-
-    <h2 style="color: var(--verde-oscuro);">🧠 Paso 2: Tu Guía Personal de IA</h2>
-    <p>Si te quedas atascado, sube una captura de pantalla a Gemini y usa este <strong>Prompt Maestro</strong>:</p>
-    <div style="background: #f1f5f9; padding: 20px; border-radius: 8px; border-left: 5px solid #4285f4; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-        "Eres experto en Google Workspace Studio. Tengo este problema: <strong>[Describe aquí tu duda]</strong> y quiero lograr <strong>[Tu objetivo]</strong>. Revisa la captura adjunta y guíame paso a paso."
-    </div>
-
-    <h2 style="color: var(--verde-oscuro); margin-top: 50px;">⚙️ Paso 3: La lógica detrás del flujo</h2>
-    <p>Antes de construir, entiende cómo piensa la herramienta:</p>
-    
-    <div class="logica-visual">
-        <div class="logica-item">
-            <span style="font-size: 2rem;">⚡</span>
-            <h4>Disparador (Trigger)</h4>
-            <p>"Cuando pase esto..."</p>
-            <p><small>Ej: Recibo un correo de "Factura"</small></p>
+    <section class="paso-curso">
+        <h2>📍 Paso 1: Ingresa a tu Centro de Mando</h2>
+        <p>Olvida los menús complicados. Haz clic en el botón de abajo para abrir la herramienta en una pestaña nueva:</p>
+        <div class="caja-enlace-studio">
+            <a href="https://studio.workspace.google.com" target="_blank" class="btn-principal" style="background: var(--verde-primario); color: var(--verde-oscuro);">🚀 Abrir Google Workspace Studio</a>
         </div>
-        <div class="logica-flecha">⬇️</div>
-        <div class="logica-item">
-            <span style="font-size: 2rem;">🛠️</span>
-            <h4>Acción (Action)</h4>
-            <p>"...haz esto otro"</p>
-            <p><small>Ej: Guardar adjunto en Drive</small></p>
+    </section>
+
+    <section class="paso-curso">
+        <h2>🧠 Paso 2: Tu Guía Personal de IA</h2>
+        <p>No tienes que memorizar todo. Si te atascas configurando un flujo, sube una captura de pantalla a Gemini y usa este <strong>Prompt Maestro</strong>:</p>
+        <div class="teoria-box" style="border-left: 5px solid #4285f4;">
+            <p><em>"Eres experto en Google Workspace Studio. Tengo este problema: <strong>[Describe tu duda]</strong> y quiero lograr: <strong>[Tu objetivo]</strong>. Revisa la captura adjunta y guíame paso a paso indicándome dónde hacer clic."</em></p>
         </div>
-    </div>
+    </section>
 
-    <h2 style="color: var(--verde-oscuro); margin-top: 50px;">🛠️ Paso 4: Tus primeros flujos paso a paso</h2>
-    
-    <div class="tutorial-flujo">
-        <h3 style="color: #2d3748; margin-top: 0;">📂 Flujo 1: Organizador Automático de Archivos</h3>
-        <p><small>Extrae adjuntos de Gmail a Drive automáticamente.</small></p>
+    <section class="paso-curso">
+        <h2>⚙️ Paso 3: La lógica detrás del flujo</h2>
+        <p>Entender cómo piensa Workspace Studio es la clave del éxito:</p>
+        <div class="esquema-logica">
+            <div class="logica-bloque">
+                <span style="font-size: 2rem;">⚡</span>
+                <h4>Disparador (Trigger)</h4>
+                <p><small>"Cuando pase esto..."</small></p>
+                <p><strong>Ej: Recibo un correo de "Factura"</strong></p>
+            </div>
+            <div style="font-size: 1.5rem; color: var(--verde-primario);">⬇️</div>
+            <div class="logica-bloque">
+                <span style="font-size: 2rem;">🛠️</span>
+                <h4>Acción (Action)</h4>
+                <p><small>"...haz esto otro"</small></p>
+                <p><strong>Ej: Guardar adjunto en Drive</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="paso-curso">
+        <h2>🛠️ Paso 4: Tus primeros flujos paso a paso</h2>
         
-        <span class="fase-titulo">Fase 1: Creación</span>
-        <ul class="pasos-lista">
-            <li>Haz clic en el botón azul <span class="google-ui">+</span> para crear un lienzo.</li>
-            <li>Haz clic en el lápiz y nómbralo <span class="google-ui">Guardar adjuntos en Drive</span>.</li>
+        <div class="contenedor-flujo">
+            <h3 style="margin-top:0;">📂 Flujo 1: Organizador de Archivos (Gmail a Drive)</h3>
+            
+            <div class="fase-guia">
+                <span class="fase-tag">Fase 1: Creación</span>
+                <p>Haz clic en el botón azul <span class="google-btn-ui">+</span>. Nombra el flujo como <span class="google-btn-ui">Guardar adjuntos en Drive</span> usando el ícono del lápiz.</p>
+            </div>
+
+            <div class="fase-guia">
+                <span class="fase-tag">Fase 2: El Iniciador</span>
+                <p>Haz clic en el bloque azul. En el panel derecho busca <span class="google-btn-ui">When I get an email</span>. Selecciona <span class="google-btn-ui">Specific emails</span> y marca <span class="google-btn-ui">Has attachment</span>.</p>
+            </div>
+
+            <div class="fase-guia">
+                <span class="fase-tag">Fase 3: La Acción</span>
+                <p>Haz clic en <span class="google-btn-ui">+ Add step</span> y elige <span class="google-btn-ui">Add email attachments to Drive</span>. Selecciona tu carpeta en Drive y en variables elige <span class="google-btn-ui">Email attachments</span>.</p>
+            </div>
+
+            <div class="fase-guia">
+                <span class="fase-tag">Fase 4: Activación</span>
+                <p>Haz clic en <span class="google-btn-ui">Test run</span>. Si todo está bien, presiona el botón azul <span class="google-btn-ui">Turn on</span>.</p>
+            </div>
+        </div>
+
+        <div class="contenedor-flujo">
+            <h3 style="margin-top:0;">📧 Flujo 2: Notificador con IA (Resumen de Formularios)</h3>
+            
+            <div class="fase-guia">
+                <span class="fase-tag">Fase 1 y 2</span>
+                <p>Crea un nuevo lienzo. Elige <span class="google-btn-ui">When a form response comes in</span> y selecciona tu formulario de Google Drive.</p>
+            </div>
+
+            <div class="fase-guia">
+                <span class="fase-tag">Fase 3: La IA</span>
+                <p>Agrega un paso de <span class="google-btn-ui">AI actions</span> -> <span class="google-btn-ui">Summarize</span>. En prompt escribe: <em>"Haz un resumen claro en viñetas de estas respuestas"</em>.</p>
+            </div>
+
+            <div class="fase-guia">
+                <span class="fase-tag">Fase 4 y 5</span>
+                <p>Agrega <span class="google-btn-ui">Notify me by email</span>. En el mensaje inserta la variable <span class="google-btn-ui">Summarize output</span>. ¡Prueba y activa!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="paso-curso">
+        <h2>📊 Paso 5: Gestiona tus flujos en "My Flows"</h2>
+        <p>Tus automatizaciones viven en el menú izquierdo bajo el nombre <strong>My flows</strong>:</p>
+        <ul>
+            <li><strong>Estado:</strong> Usa el interruptor para encender o apagar.</li>
+            <li><strong>Monitoreo:</strong> Haz clic en un flujo para ver su historial de éxito.</li>
         </ul>
+    </section>
 
-        <span class="fase-titulo">Fase 2: Desencadenante (Gmail)</span>
-        <ul class="pasos-lista">
-            <li>Selecciona <span class="google-ui">When I get an email</span>.</li>
-            <li>Haz clic en el bloque <span class="google-ui">Step 1</span> y marca <span class="google-ui">Has attachment</span>.</li>
-        </ul>
-
-        <span class="fase-titulo">Fase 3: Acción (Drive)</span>
-        <ul class="pasos-lista">
-            <li>Haz clic en <span class="google-ui">+ Add step</span> y elige <span class="google-ui">Add email attachments to Drive</span>.</li>
-            <li>En <span class="google-ui">Location</span>, selecciona tu carpeta de destino.</li>
-            <li>En <span class="google-ui">Gmail attachments</span>, usa <span class="google-ui">+ Variables</span> y elige las del Paso 1.</li>
-        </ul>
-    </div>
-
-    <div class="tutorial-flujo">
-        <h3 style="color: #2d3748; margin-top: 0;">📧 Flujo 2: Notificador con IA</h3>
-        <p><small>Recibe resúmenes de formularios por correo.</small></p>
-        
-        <span class="fase-titulo">Fase 1: Configurar Formulario</span>
-        <ul class="pasos-lista">
-            <li>Iniciador: Selecciona <span class="google-ui">When a form response comes in</span> y elige tu formulario.</li>
-        </ul>
-
-        <span class="fase-titulo">Fase 2: La IA Resumiendo</span>
-        <ul class="pasos-lista">
-            <li>Agrega paso: Busca <strong>AI actions</strong> y elige <span class="google-ui">Summarize</span>.</li>
-            <li>En <strong>Enter a prompt</strong> escribe: "Resume estas respuestas en viñetas".</li>
-        </ul>
-
-        <span class="fase-titulo">Fase 3: El Aviso</span>
-        <ul class="pasos-lista">
-            <li>Agrega paso: <span class="google-ui">Notify me by email</span> e inserta la variable del resumen.</li>
-        </ul>
-    </div>
-
-    <h2 style="color: var(--verde-oscuro);">📊 Paso 5: Gestiona tus flujos en "My Flows"</h2>
-    <div style="background: #edf2f7; padding: 20px; border-radius: 10px; display: flex; gap: 20px; align-items: center;">
-        <span style="font-size: 2.5rem;">📋</span>
-        <p style="margin: 0;">En la sección <strong>My flows</strong> del menú izquierdo puedes encender/apagar tus automatizaciones y revisar el historial de ejecución.</p>
-    </div>
-
-    <div class="entrega-final">
-        <h2 style="color: var(--verde-oscuro); margin-top: 0;">🎯 Tu Reto Final: El Entregable</h2>
-        <p>Aplica las <strong>3 R</strong>, usa tu <strong>Copiloto IA</strong> y construye tu solución real en <strong>Workspace Studio</strong>.</p>
-        <p><strong>Sube una captura de tu flujo activo para graduarte:</strong></p>
-        <a href="#" class="reto-btn" style="background: var(--verde-oscuro); display: inline-block; margin-top: 15px;">📤 Subir Captura de mi Automatización</a>
+    <div class="reto-final-contenedor">
+        <h1 style="color: var(--verde-oscuro); margin-top:0;">🎓 Tu Reto Final: El Entregable</h1>
+        <p>Llegó el momento de graduarte. Aplica las <strong>3 R</strong>, usa a tu <strong>Copiloto Gemini</strong> y construye una solución real para tu área en <strong>Workspace Studio</strong>.</p>
+        <div style="background: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: left;">
+            <p><strong>1. Captura tu éxito:</strong> Toma una captura de tu flujo activo en "My flows".</p>
+            <p><strong>2. Certifícate:</strong> Sube la imagen aquí abajo para validar tu primera tarea real automatizada.</p>
+        </div>
+        <a href="#" class="btn-principal" style="padding: 15px 40px; font-size: 1.1rem;">📤 Subir Captura de mi Automatización</a>
     </div>
 
     <div class="navegacion-modulos">
-        <a href="modulo3.html" class="btn-nav-secundario">⬅️ Anterior: Módulo 3</a>
-        <a href="cursos.html" class="btn-principal" style="margin-top: 0;">✅ Finalizar Ruta</a>
+        <a href="modulo3.html" class="btn-nav-secundario">
+            <span class="icono-flecha-azul">⬅</span> Anterior: Módulo 3
+        </a>
+        <a href="cursos.html" class="btn-principal" style="margin-top: 0; background: var(--verde-oscuro);">
+            ✅ Finalizar Ruta
+        </a>
     </div>
 </div>
 
