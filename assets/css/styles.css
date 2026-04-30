@@ -1000,14 +1000,54 @@ nav a.activo {
    ESTILOS ESPECÍFICOS: MÓDULO 4 (DETALLE)
    ========================================= */
 
-/* Caja de Enlace Directo */
 .caja-enlace-studio {
-    background: var(--verde-oscuro);
-    color: white;
-    padding: 30px;
-    border-radius: 15px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    border: 1px solid #bbf7d0;
+    box-shadow: 0 8px 25px rgba(0, 203, 117, 0.1);
+    padding: 40px 20px;
+    border-radius: 20px;
     text-align: center;
-    margin: 30px 0;
+    margin: 30px auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.caja-enlace-studio .icono-central {
+    font-size: 3.5rem;
+    background: white;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: -10px;
+}
+
+.btn-lanzamiento {
+    background-color: var(--verde-primario);
+    color: var(--verde-oscuro);
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 203, 117, 0.3); /* Efecto de resplandor */
+    margin-top: 10px;
+}
+
+.btn-lanzamiento:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 203, 117, 0.4);
+    background-color: #00e685;
 }
 
 /* Pasos Numerados del Curso */
