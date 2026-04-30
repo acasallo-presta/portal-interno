@@ -36,104 +36,181 @@
 
     <section class="paso-curso">
         <h2>📍 Paso 1: Ingresa a tu Centro de Mando</h2>
-        <p>Olvida los menús complicados. Haz clic en el botón de abajo para abrir la herramienta en una pestaña nueva:</p>
+        <p>Olvida los menús complicados. La automatización profesional ocurre en una web dedicada. Haz clic en el botón de abajo para abrir la herramienta y tenerla lista en una pestaña nueva:</p>
         <div class="caja-enlace-studio">
             <a href="https://studio.workspace.google.com" target="_blank" class="btn-principal" style="background: var(--verde-primario); color: var(--verde-oscuro);">🚀 Abrir Google Workspace Studio</a>
         </div>
     </section>
 
     <section class="paso-curso">
-        <h2>🧠 Paso 2: Tu Guía Personal de IA</h2>
-        <p>No tienes que memorizar todo. Si te atascas configurando un flujo, sube una captura de pantalla a Gemini y usa este <strong>Prompt Maestro</strong>:</p>
-        <div class="teoria-box" style="border-left: 5px solid #4285f4;">
-            <p><em>"Eres experto en Google Workspace Studio. Tengo este problema: <strong>[Describe tu duda]</strong> y quiero lograr: <strong>[Tu objetivo]</strong>. Revisa la captura adjunta y guíame paso a paso indicándome dónde hacer clic."</em></p>
+        <h2>🧠 Paso 2: Tu Guía Personal de IA (Cómo pedir ayuda)</h2>
+        <p>Es normal que al principio la plataforma te parezca nueva. No tienes que memorizar todo. Si en algún momento estás armando tu flujo, te quedas atascado o no sabes qué botón presionar, usa a Gemini como tu tutor visual. Solo tienes que tomar una captura de pantalla de donde te quedaste, subirla al chat de Gemini y usar este <strong>Prompt Maestro</strong>:</p>
+        <div class="teoria-box" style="border-left: 5px solid #4285f4; background-color: #f8fbff; padding: 20px; border-radius: 8px;">
+            <p style="font-family: 'Courier New', monospace; margin: 0; color: #333;"><em>"Eres experto en Google Workspace Studio. Tengo este problema: <strong>[Describe aquí lo que intentas hacer y dónde te atascaste]</strong> y quiero que la solución sea: <strong>[Dime qué quieres lograr al final]</strong>. Revisa la captura de pantalla adjunta y guíame paso a paso indicándome exactamente dónde debo hacer clic o qué debo escribir para avanzar."</em></p>
         </div>
+        <p style="margin-top: 15px; color: #555;">¡Gemini mirará tu pantalla y te dirá exactamente qué hacer!</p>
     </section>
 
     <section class="paso-curso">
         <h2>⚙️ Paso 3: La lógica detrás del flujo</h2>
-        <p>Entender cómo piensa Workspace Studio es la clave del éxito:</p>
+        <p>Antes de empezar a construir, es clave que entiendas cómo piensa Workspace Studio. Para crear cualquier automatización, solo debes entender estos dos conceptos:</p>
         <div class="esquema-logica">
             <div class="logica-bloque">
-                <span style="font-size: 2rem;">⚡</span>
-                <h4>Disparador (Trigger)</h4>
-                <p><small>"Cuando pase esto..."</small></p>
-                <p><strong>Ej: Recibo un correo de "Factura"</strong></p>
+                <span style="font-size: 2.5rem;">⚡</span>
+                <h4 style="font-size: 1.2rem;">Disparador (Trigger)</h4>
+                <p>Es el evento que inicia todo.<br><strong>"Cuando pase esto..."</strong></p>
+                <p style="color: #666;"><small>Ejemplo: Recibo un correo con el asunto "Factura".</small></p>
             </div>
-            <div style="font-size: 1.5rem; color: var(--verde-primario);">⬇️</div>
+            <div style="font-size: 2rem; color: var(--verde-primario);">➡️</div>
             <div class="logica-bloque">
-                <span style="font-size: 2rem;">🛠️</span>
-                <h4>Acción (Action)</h4>
-                <p><small>"...haz esto otro"</small></p>
-                <p><strong>Ej: Guardar adjunto en Drive</strong></p>
+                <span style="font-size: 2.5rem;">🛠️</span>
+                <h4 style="font-size: 1.2rem;">Acción (Action)</h4>
+                <p>Es la tarea que se ejecuta de forma automática.<br><strong>"...haz esto otro."</strong></p>
+                <p style="color: #666;"><small>Ejemplo: Guarda el archivo adjunto en mi carpeta de Drive.</small></p>
             </div>
         </div>
     </section>
 
     <section class="paso-curso">
         <h2>🛠️ Paso 4: Tus primeros flujos paso a paso</h2>
+        <p style="font-size: 1.1rem; color: #444; margin-bottom: 30px;">Ahora que entiendes la lógica, es momento de practicar. Sigue las instrucciones al pie de la letra, usando los nombres exactos que verás en tu pantalla.</p>
         
-        <div class="contenedor-flujo">
-            <h3 style="margin-top:0;">📂 Flujo 1: Organizador de Archivos (Gmail a Drive)</h3>
+        <div class="contenedor-flujo" style="border-top: 5px solid #8e9fd4;">
+            <h3 style="color: #2d3748; font-size: 1.4rem; margin-top: 0;">📂 Flujo 1: Organizador Automático de Archivos</h3>
+            <p style="color: #555; margin-bottom: 25px;"><strong>Finalidad:</strong> Este flujo te ayudará a mantener tu Drive organizado extrayendo y guardando automáticamente los archivos adjuntos de tus correos.</p>
             
             <div class="fase-guia">
-                <span class="fase-tag">Fase 1: Creación</span>
-                <p>Haz clic en el botón azul <span class="google-btn-ui">+</span>. Nombra el flujo como <span class="google-btn-ui">Guardar adjuntos en Drive</span> usando el ícono del lápiz.</p>
+                <span class="fase-tag">Fase 1: Creación del Flujo</span>
+                <ul class="pasos-lista">
+                    <li>Abre Workspace Studio y ve al menú lateral izquierdo.</li>
+                    <li>Haz clic en el botón azul con el símbolo <span class="google-btn-ui">+</span> para crear un lienzo en blanco.</li>
+                    <li>En la parte superior izquierda, haz clic en el ícono del lápiz junto a <em>"Untitled flow"</em> y nómbralo (ej. <span class="google-btn-ui">Guardar adjuntos en Drive</span>).</li>
+                </ul>
             </div>
 
             <div class="fase-guia">
-                <span class="fase-tag">Fase 2: El Iniciador</span>
-                <p>Haz clic en el bloque azul. En el panel derecho busca <span class="google-btn-ui">When I get an email</span>. Selecciona <span class="google-btn-ui">Specific emails</span> y marca <span class="google-btn-ui">Has attachment</span>.</p>
+                <span class="fase-tag">Fase 2: Configurar el Desencadenante (Gmail)</span>
+                <ul class="pasos-lista">
+                    <li>En el lienzo central, haz clic en el bloque azul claro para elegir tu iniciador.</li>
+                    <li>En el panel derecho, busca y selecciona <span class="google-btn-ui">When I get an email</span> (debajo del ícono de Gmail).</li>
+                    <li>Haz clic sobre el bloque <span class="google-btn-ui">Step 1</span> en el centro de tu pantalla.</li>
+                    <li>En el panel derecho, selecciona la burbuja <span class="google-btn-ui">Specific emails</span>.</li>
+                    <li>Baja en ese mismo panel y marca la casilla <span class="google-btn-ui">Has attachment</span> (Tiene archivo adjunto).</li>
+                </ul>
             </div>
 
             <div class="fase-guia">
-                <span class="fase-tag">Fase 3: La Acción</span>
-                <p>Haz clic en <span class="google-btn-ui">+ Add step</span> y elige <span class="google-btn-ui">Add email attachments to Drive</span>. Selecciona tu carpeta en Drive y en variables elige <span class="google-btn-ui">Email attachments</span>.</p>
+                <span class="fase-tag">Fase 3: Configurar la Acción Final (Drive)</span>
+                <ul class="pasos-lista">
+                    <li>Debajo del Paso 1, haz clic en el botón blanco <span class="google-btn-ui">+ Add step</span>.</li>
+                    <li>En el panel derecho, selecciona <span class="google-btn-ui">Add email attachments to Drive</span>.</li>
+                    <li>Haz clic en el bloque rojo de tu lienzo (te indicará <em>Missing a required field</em>).</li>
+                    <li>En el panel derecho, bajo <em>Location for email attachments</em>, haz clic en el botón celeste <span class="google-btn-ui">Drive</span>.</li>
+                    <li>Se abrirá una ventana emergente. Ve a la pestaña "Todas las ubicaciones", selecciona la carpeta donde quieres guardar los archivos (ej. "Mi unidad") y haz clic en "Seleccionar".</li>
+                    <li>Ahora, bajo <em>Gmail attachments</em>, haz clic en el botón celeste <span class="google-btn-ui">+ Variables</span>.</li>
+                    <li>En el pequeño buscador que aparece, selecciona <span class="google-btn-ui">Step 1: When I get an email</span> (con la flechita >) y luego elige la variable de los adjuntos. El recuadro ahora debe mostrar <em>Step 1: Email attachments</em>.</li>
+                </ul>
             </div>
 
             <div class="fase-guia">
-                <span class="fase-tag">Fase 4: Activación</span>
-                <p>Haz clic en <span class="google-btn-ui">Test run</span>. Si todo está bien, presiona el botón azul <span class="google-btn-ui">Turn on</span>.</p>
+                <span class="fase-tag">Fase 4: Prueba y Activación</span>
+                <ul class="pasos-lista">
+                    <li>En la parte inferior central de la pantalla, haz clic en el botón blanco <span class="google-btn-ui">Test run</span>.</li>
+                    <li>Si todo está correcto, haz clic en el botón azul <span class="google-btn-ui">Turn on</span> para que tu flujo empiece a trabajar.</li>
+                </ul>
+            </div>
+
+            <div style="background: #eef2ff; border-radius: 8px; padding: 20px; margin-top: 30px;">
+                <h4 style="color: #3730a3; margin-top: 0;">👀 Cómo probarlo en la vida real:</h4>
+                <p style="margin-bottom: 0; color: #4338ca; font-size: 0.95rem;">Para ver la magia en acción, envíate un correo a ti mismo desde otra cuenta e incluye cualquier archivo adjunto (una imagen o un PDF). Espera unos segundos y revisa la carpeta de Google Drive que elegiste en la Fase 3. ¡El archivo aparecerá ahí guardado de forma automática!</p>
             </div>
         </div>
 
-        <div class="contenedor-flujo">
-            <h3 style="margin-top:0;">📧 Flujo 2: Notificador con IA (Resumen de Formularios)</h3>
+        <div class="contenedor-flujo" style="border-top: 5px solid #00cb75;">
+            <h3 style="color: #2d3748; font-size: 1.4rem; margin-top: 0;">📧 Flujo 2: Notificador Inteligente con IA</h3>
+            <p style="color: #555; margin-bottom: 25px;"><strong>Finalidad:</strong> Ideal para cuando esperas respuestas de clientes o compañeros a través de un Formulario de Google y quieres que la Inteligencia Artificial te envíe un resumen rápido a tu correo.</p>
             
             <div class="fase-guia">
-                <span class="fase-tag">Fase 1 y 2</span>
-                <p>Crea un nuevo lienzo. Elige <span class="google-btn-ui">When a form response comes in</span> y selecciona tu formulario de Google Drive.</p>
+                <span class="fase-tag">Fase 1: Creación del Flujo</span>
+                <ul class="pasos-lista">
+                    <li>Abre Workspace Studio y ve al menú lateral izquierdo.</li>
+                    <li>Haz clic en el botón azul con el símbolo <span class="google-btn-ui">+</span> para crear un lienzo en blanco.</li>
+                    <li>En la parte superior izquierda, haz clic en el ícono del lápiz para nombrarlo (ej. <span class="google-btn-ui">Resumen de Formulario</span>).</li>
+                </ul>
             </div>
 
             <div class="fase-guia">
-                <span class="fase-tag">Fase 3: La IA</span>
-                <p>Agrega un paso de <span class="google-btn-ui">AI actions</span> -> <span class="google-btn-ui">Summarize</span>. En prompt escribe: <em>"Haz un resumen claro en viñetas de estas respuestas"</em>.</p>
+                <span class="fase-tag">Fase 2: Configurar el Desencadenante (Google Forms)</span>
+                <ul class="pasos-lista">
+                    <li>En el lienzo central, haz clic en el bloque azul claro <span class="google-btn-ui">Choose a starter</span>.</li>
+                    <li>En el panel derecho, desplázate hacia abajo y selecciona <span class="google-btn-ui">When a form response comes in</span>.</li>
+                    <li>Haz clic sobre el bloque del Paso 1 en el centro de tu pantalla.</li>
+                    <li>En el panel derecho, busca y selecciona el formulario exacto de tu Google Drive que quieres conectar.</li>
+                </ul>
             </div>
 
             <div class="fase-guia">
-                <span class="fase-tag">Fase 4 y 5</span>
-                <p>Agrega <span class="google-btn-ui">Notify me by email</span>. En el mensaje inserta la variable <span class="google-btn-ui">Summarize output</span>. ¡Prueba y activa!</p>
+                <span class="fase-tag">Fase 3: Configurar la Inteligencia Artificial (Resumen)</span>
+                <ul class="pasos-lista">
+                    <li>Debajo del Paso 1, haz clic en el botón blanco <span class="google-btn-ui">+ Add step</span>.</li>
+                    <li>En el panel derecho, busca la sección <em>AI actions</em> y selecciona <span class="google-btn-ui">Summarize</span>.</li>
+                    <li>En el campo <em>What to summarize</em>, abre el menú desplegable y elige <span class="google-btn-ui">Content from previous steps</span>.</li>
+                    <li>Justo debajo, selecciona la variable del Paso 1 (las respuestas del formulario).</li>
+                    <li>En el recuadro rojo <em>Enter a prompt</em>, escribe las instrucciones claras para la IA (ej: "Haz un resumen claro y conciso de las respuestas de este formulario utilizando viñetas").</li>
+                </ul>
+            </div>
+
+            <div class="fase-guia">
+                <span class="fase-tag">Fase 4: Configurar la Acción Final (Gmail)</span>
+                <ul class="pasos-lista">
+                    <li>Debajo del Paso 2, vuelve a hacer clic en el botón blanco <span class="google-btn-ui">+ Add step</span>.</li>
+                    <li>En el panel derecho, baja hasta la sección <em>Gmail</em> y selecciona <span class="google-btn-ui">Notify me by email</span>.</li>
+                    <li>En el campo <em>Subject (Asunto)</em>, escribe el título de tu correo (ej. "Nuevo resumen de respuestas del formulario").</li>
+                    <li>En el campo <em>Message (Cuerpo)</em>, escribe un saludo, luego haz clic en el botón <span class="google-btn-ui">+ Variables</span>.</li>
+                    <li>Navega hasta <span class="google-btn-ui">Step 2: Summarize</span> y selecciona la variable de salida (el resumen creado por Gemini) para insertarla en el mensaje.</li>
+                </ul>
+            </div>
+
+            <div class="fase-guia">
+                <span class="fase-tag">Fase 5: Prueba y Activación</span>
+                <ul class="pasos-lista">
+                    <li>Revisa que no haya ningún borde o texto en rojo.</li>
+                    <li>Haz clic en el botón blanco <span class="google-btn-ui">Test run</span> para verificar las conexiones.</li>
+                    <li>Si la prueba es exitosa, haz clic en el botón azul <span class="google-btn-ui">Turn on</span> para activar la automatización.</li>
+                </ul>
+            </div>
+
+            <div style="background: #eef2ff; border-radius: 8px; padding: 20px; margin-top: 30px;">
+                <h4 style="color: #3730a3; margin-top: 0;">👀 Cómo probarlo en la vida real:</h4>
+                <p style="margin-bottom: 0; color: #4338ca; font-size: 0.95rem;">Abre el enlace de tu propio formulario (el que elegiste en la Fase 2) y llénalo con respuestas de prueba. Al darle enviar, revisa tu bandeja de entrada de Gmail. ¡Recibirás un correo redactado por la IA resumiendo exactamente lo que acabas de enviar en el formulario!</p>
             </div>
         </div>
     </section>
 
     <section class="paso-curso">
         <h2>📊 Paso 5: Gestiona tus flujos en "My Flows"</h2>
-        <p>Tus automatizaciones viven en el menú izquierdo bajo el nombre <strong>My flows</strong>:</p>
-        <ul>
-            <li><strong>Estado:</strong> Usa el interruptor para encender o apagar.</li>
-            <li><strong>Monitoreo:</strong> Haz clic en un flujo para ver su historial de éxito.</li>
+        <p>Una vez que actives tus automatizaciones, estas vivirán en la sección <strong>"My flows"</strong> (menú izquierdo).</p>
+        <ul style="color: #444; font-size: 1.05rem;">
+            <li style="margin-bottom: 10px;"><strong>Estado:</strong> Verás un interruptor para cada flujo. Puedes encenderlos o apagarlos cuando desees.</li>
+            <li><strong>Monitoreo:</strong> Si haces clic en un flujo, podrás ver su historial para asegurarte de que se está ejecutando correctamente.</li>
         </ul>
     </section>
 
     <div class="reto-final-contenedor">
         <h1 style="color: var(--verde-oscuro); margin-top:0;">🎓 Tu Reto Final: El Entregable</h1>
-        <p>Llegó el momento de graduarte. Aplica las <strong>3 R</strong>, usa a tu <strong>Copiloto Gemini</strong> y construye una solución real para tu área en <strong>Workspace Studio</strong>.</p>
-        <div style="background: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: left;">
-            <p><strong>1. Captura tu éxito:</strong> Toma una captura de tu flujo activo en "My flows".</p>
-            <p><strong>2. Certifícate:</strong> Sube la imagen aquí abajo para validar tu primera tarea real automatizada.</p>
+        <p style="color: #555; font-size: 1.1rem;">Llegó el momento de graduarte como Agilizador Digital. Para completar este módulo y finalizar con éxito tu ruta de aprendizaje, debes poner en práctica todo lo que has aprendido:</p>
+        
+        <div style="background: white; padding: 25px; border-radius: 12px; margin: 30px 0; text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+            <ul style="list-style: none; padding: 0; margin: 0; color: #444; line-height: 1.6;">
+                <li style="margin-bottom: 15px;">🔍 <strong>1. Aplica el Filtro (Módulo 2):</strong> Identifica un proceso real de tu área que sea Repetitivo, Rutinario y con Reglas claras. ¡Ese será tu proyecto!</li>
+                <li style="margin-bottom: 15px;">🤖 <strong>2. Usa tu Copiloto (Módulo 3):</strong> Apóyate en Gemini usando el "Prompt Maestro" para que te ayude a estructurar el flujo.</li>
+                <li style="margin-bottom: 15px;">⚙️ <strong>3. Construye tu Solución (Módulo 4):</strong> Entra a Workspace Studio y configura la automatización (Disparador + Acción).</li>
+                <li style="margin-bottom: 15px;">📸 <strong>4. Captura tu Éxito:</strong> Toma una captura de pantalla de tu lienzo de trabajo o de la sección "My flows" donde se vea activa.</li>
+                <li>📝 <strong>5. Registra tu Avance:</strong> Sube la imagen aquí abajo para validar que has logrado automatizar tu primera tarea real.</li>
+            </ul>
         </div>
-        <a href="#" class="btn-principal" style="padding: 15px 40px; font-size: 1.1rem;">📤 Subir Captura de mi Automatización</a>
+        
+        <a href="#" class="btn-principal" style="padding: 15px 40px; font-size: 1.1rem; background: var(--verde-oscuro);">📤 Subir Captura de Pantalla de mi Automatización</a>
     </div>
 
     <div class="navegacion-modulos">
