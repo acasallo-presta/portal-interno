@@ -996,13 +996,12 @@ nav a.activo {
     margin-top: 10px;
     display: block;
 }
-
 /* =========================================
-   ESTILOS MÓDULO 4: CENTRO DE CONTROL
+   ESTILOS ESPECÍFICOS: MÓDULO 4 (DETALLE)
    ========================================= */
 
-/* Caja de Enlace a la Herramienta */
-.caja-herramienta-link {
+/* Caja de Enlace Directo */
+.caja-enlace-studio {
     background: var(--verde-oscuro);
     color: white;
     padding: 30px;
@@ -1011,95 +1010,112 @@ nav a.activo {
     margin: 30px 0;
 }
 
-/* Esquema de Lógica (Trigger -> Action) */
-.logica-visual {
+/* Pasos Numerados del Curso */
+.paso-curso {
+    margin-top: 50px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.paso-curso h2 {
+    color: var(--verde-oscuro);
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    background: #f8fafc;
-    padding: 30px;
-    border-radius: 15px;
+    gap: 12px;
+}
+
+/* Esquema de Lógica (Trigger -> Action) */
+.esquema-logica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fdfdfd;
     border: 2px dashed #cbd5e0;
+    border-radius: 15px;
+    padding: 25px;
     margin: 20px 0;
-    flex-wrap: wrap;
     gap: 20px;
 }
 
-.logica-item {
+.logica-bloque {
     flex: 1;
-    min-width: 200px;
     text-align: center;
+    padding: 15px;
 }
 
-.logica-item h4 {
-    color: var(--verde-oscuro);
-    margin: 10px 0;
-}
-
-.logica-flecha {
-    font-size: 2rem;
-    color: var(--verde-primario);
-}
-
-/* Tutorial de Flujos */
-.tutorial-flujo {
+/* Estilo para las Fases de los flujos */
+.contenedor-flujo {
     background: white;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
-.fase-titulo {
+.fase-guia {
+    margin-bottom: 20px;
+}
+
+.fase-tag {
     display: inline-block;
-    background: #edf2f7;
-    color: #4a5568;
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    background: var(--verde-claro);
+    color: var(--verde-oscuro);
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
     font-weight: bold;
-    margin-bottom: 15px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-.pasos-lista {
-    list-style: none;
-    padding: 0;
-}
-
-.pasos-lista li {
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 12px;
-    color: #4a5568;
-}
-
-.pasos-lista li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--verde-primario);
-    font-weight: bold;
-}
-
-/* Resaltado de botones de la interfaz de Google */
-.google-ui {
-    background: #f1f5f9;
-    padding: 2px 6px;
-    border: 1px solid #cbd5e0;
+/* Resaltado de botones de la Interfaz Real de Google */
+.google-btn-ui {
+    background: #f1f3f4;
+    border: 1px solid #dadce0;
+    padding: 2px 8px;
     border-radius: 4px;
-    font-family: monospace;
-    font-weight: bold;
-    color: #1a202c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #3c4043;
+    font-size: 0.9rem;
 }
 
-/* Estilo para el entregable final */
-.entrega-final {
-    background: linear-gradient(135deg, #e6fffa 0%, #ffffff 100%);
+/* Botón de Anterior estilo Píldora con Icono Azul */
+.btn-nav-secundario {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 25px;
+    background-color: white;
+    color: #555;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.icono-flecha-azul {
+    background: #4285f4;
+    color: white;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Reto Final Estilo Graduación */
+.reto-final-contenedor {
+    background: linear-gradient(135deg, #f0fff4 0%, #ffffff 100%);
     border: 2px solid var(--verde-primario);
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 20px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 /* =========================================
