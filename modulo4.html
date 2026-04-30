@@ -3,24 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presta Innovation V - Módulo 4</title>
+    <title>Módulo 4 - Mi Centro de Control</title>
     
     <script>
-        if (sessionStorage.getItem('token_google_ia')) {
-            document.documentElement.classList.add('sesion-activa');
-            try {
-                const token = sessionStorage.getItem('token_google_ia');
-                const payload = JSON.parse(atob(token.split('.')[1]));
-                window.nombreUsuarioPrerender = "Hola, " + payload.name;
-            } catch(e) {}
-        } else {
+        // Protección de ruta
+        if (!sessionStorage.getItem('token_google_ia')) {
             window.location.replace('index.html');
         }
     </script>
-    
-    <style>
-        html:not(.sesion-activa) { display: none; }
-    </style>
     
     <script src="assets/js/guardian.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -30,13 +20,6 @@
 <nav>
     <a href="index.html" class="logo">Presta Innovation V</a>
     <div>
-        <span id="nombre-usuario" style="color: var(--verde-primario); margin-right: 15px; font-size: 0.9rem;">
-            <script>
-                if(window.nombreUsuarioPrerender) {
-                    document.write(window.nombreUsuarioPrerender);
-                }
-            </script>
-        </span>
         <a href="index.html">Inicio</a>
         <a href="herramientas.html">Herramientas</a>
         <a href="cursos.html" class="activo">Cursos</a>
@@ -45,85 +28,107 @@
 </nav>
 
 <div class="modulo-contenedor">
-    
-    <h1 class="modulo-titulo">🧰 Módulo 4: Mi primer flujo con Workspace Studio</h1>
-    
+    <h1 class="modulo-titulo">🧰 Módulo 4: Mi Centro de Control en Workspace Studio</h1>
+
     <div class="modulo-intro">
-        <p><strong>¡Es hora de pasar de la teoría a la acción!</strong> En este módulo final, conocerás la plataforma principal que te permitirá conectar tus aplicaciones favoritas (Gmail, Sheets, Drive) para que trabajen por ti, sin necesidad de escribir código.</p>
+        <p><strong>¡Bienvenido al corazón de la automatización!</strong> Hoy vas a tomar el control. Entraremos a la plataforma visual donde conectarás tus herramientas para que trabajen por ti.</p>
     </div>
 
-    <h2 style="color: var(--verde-oscuro);">📍 ¿Cómo acceder a tu panel de control?</h2>
-    <p>Workspace Studio está integrado directamente en tu entorno actual de Google:</p>
+    <div class="caja-herramienta-link">
+        <h3>📍 Paso 1: Ingresa a tu Centro de Mando</h3>
+        <p>Haz clic en el botón para abrir la herramienta en una pestaña nueva:</p>
+        <a href="https://studio.workspace.google.com" target="_blank" class="btn-principal" style="background: var(--verde-primario); color: var(--verde-oscuro); margin-top: 10px;">🚀 Abrir Google Workspace Studio</a>
+    </div>
+
+    <h2 style="color: var(--verde-oscuro);">🧠 Paso 2: Tu Guía Personal de IA</h2>
+    <p>Si te quedas atascado, sube una captura de pantalla a Gemini y usa este <strong>Prompt Maestro</strong>:</p>
+    <div style="background: #f1f5f9; padding: 20px; border-radius: 8px; border-left: 5px solid #4285f4; font-family: 'Courier New', monospace; font-size: 0.95rem;">
+        "Eres experto en Google Workspace Studio. Tengo este problema: <strong>[Describe aquí tu duda]</strong> y quiero lograr <strong>[Tu objetivo]</strong>. Revisa la captura adjunta y guíame paso a paso."
+    </div>
+
+    <h2 style="color: var(--verde-oscuro); margin-top: 50px;">⚙️ Paso 3: La lógica detrás del flujo</h2>
+    <p>Antes de construir, entiende cómo piensa la herramienta:</p>
     
-    <div class="acceso-lista">
-        <div class="acceso-item">
-            <span class="acceso-num">1</span>
-            <span>Abre una <strong>Hoja de Cálculo</strong> (Sheets) o un <strong>Documento</strong> de Google.</span>
+    <div class="logica-visual">
+        <div class="logica-item">
+            <span style="font-size: 2rem;">⚡</span>
+            <h4>Disparador (Trigger)</h4>
+            <p>"Cuando pase esto..."</p>
+            <p><small>Ej: Recibo un correo de "Factura"</small></p>
         </div>
-        <div class="acceso-item">
-            <span class="acceso-num">2</span>
-            <span>En la barra de menú superior, haz clic en el menú <strong>Extensiones</strong>.</span>
-        </div>
-        <div class="acceso-item">
-            <span class="acceso-num">3</span>
-            <span>Selecciona <strong>Google Workspace Studio</strong>.</span>
-        </div>
-    </div>
-    <p style="font-size: 0.9rem; color: #666; font-style: italic;">Se abrirá un panel lateral derecho donde configurarás tus automatizaciones paso a paso.</p>
-
-    <h2 style="color: var(--verde-oscuro); margin-top: 50px;">⚙️ La lógica detrás del flujo</h2>
-    <p>Para crear cualquier automatización, solo debes entender estos dos conceptos:</p>
-
-    <div class="logica-container">
-        <div class="logica-box">
-            <h4>⚡ Disparador (Trigger)</h4>
-            <p style="font-size: 0.9rem; color: #555;">Es el evento que inicia todo.<br><strong>"Cuando pase esto..."</strong></p>
-            <p style="font-size: 0.8rem; color: #888;">Ej: Recibo un correo con asunto "Factura".</p>
-        </div>
-        <div class="flecha-logica">➡️</div>
-        <div class="logica-box">
-            <h4>🛠️ Acción (Action)</h4>
-            <p style="font-size: 0.9rem; color: #555;">Es la tarea automática.<br><strong>"...haz esto otro"</strong></p>
-            <p style="font-size: 0.8rem; color: #888;">Ej: Guarda el adjunto en Drive.</p>
+        <div class="logica-flecha">⬇️</div>
+        <div class="logica-item">
+            <span style="font-size: 2rem;">🛠️</span>
+            <h4>Acción (Action)</h4>
+            <p>"...haz esto otro"</p>
+            <p><small>Ej: Guardar adjunto en Drive</small></p>
         </div>
     </div>
 
-    <div class="tutor-ia-box">
-        <h3 style="margin-top:0; color: #1a73e8;">🤖 Tu Tutor de IA: Gemini</h3>
-        <p>No tienes que adivinar cómo configurar los pasos. Usa la IA para obtener tu manual de instrucciones personalizado.</p>
-        <strong>Copia este ejemplo de consulta:</strong>
-        <code class="prompt-texto">
-            "Actúa como experto en Workspace Studio. Quiero que cada vez que reciba un formulario de Google, se envíe una respuesta automática por Gmail y se cree una fila en Sheets. ¿Qué pasos exactos sigo en el panel lateral?"
-        </code>
-    </div>
-
-    <div class="coe-support-box" style="border-left: 6px solid #D32F2F;">
-        <h3 style="margin-top:0; color: #D32F2F;">🚀 ¿Cuándo escalar al COE de Automatización?</h3>
-        <p>El COE es tu respaldo para los retos más complejos. Debes levantar la mano cuando necesites:</p>
-        <div class="coe-support-grid">
-            <div class="coe-item"><strong>Soporte Técnico:</strong> Si el flujo arroja un error o la herramienta no conecta.</div>
-            <div class="coe-item"><strong>Automatización Total:</strong> Cuando el proceso deba ejecutarse 100% solo en el servidor.</div>
-            <div class="coe-item"><strong>Procesamiento Masivo:</strong> Extraer datos de cientos de documentos al mes.</div>
-            <div class="coe-item"><strong>Sistemas Externos:</strong> Conectar con CRM o bases de datos fuera de Google.</div>
-        </div>
-    </div>
-
-    <div class="reto-postit" style="margin-top: 50px; background: #e6fffa; border-top: 5px solid var(--verde-primario);">
-        <h3 style="color: var(--verde-oscuro);">🎯 Tu Reto Final: Mi Plan de Automatización</h3>
-        <p>Antes de empezar a construir, registra tu idea sólida. Este registro completa tu certificación.</p>
-        <ul style="font-size: 0.95rem;">
-            <li><strong>Problema:</strong> ¿Qué tarea manual vas a eliminar?</li>
-            <li><strong>Herramientas:</strong> ¿Qué apps conectarás? (Ej: Gmail + Sheets).</li>
-            <li><strong>Consulta IA:</strong> ¿Qué le preguntarás a Gemini?</li>
+    <h2 style="color: var(--verde-oscuro); margin-top: 50px;">🛠️ Paso 4: Tus primeros flujos paso a paso</h2>
+    
+    <div class="tutorial-flujo">
+        <h3 style="color: #2d3748; margin-top: 0;">📂 Flujo 1: Organizador Automático de Archivos</h3>
+        <p><small>Extrae adjuntos de Gmail a Drive automáticamente.</small></p>
+        
+        <span class="fase-titulo">Fase 1: Creación</span>
+        <ul class="pasos-lista">
+            <li>Haz clic en el botón azul <span class="google-ui">+</span> para crear un lienzo.</li>
+            <li>Haz clic en el lápiz y nómbralo <span class="google-ui">Guardar adjuntos en Drive</span>.</li>
         </ul>
-        <a href="#" target="_blank" class="reto-btn" style="background: var(--verde-oscuro);">📝 Registrar mi Plan de Automatización</a>
+
+        <span class="fase-titulo">Fase 2: Desencadenante (Gmail)</span>
+        <ul class="pasos-lista">
+            <li>Selecciona <span class="google-ui">When I get an email</span>.</li>
+            <li>Haz clic en el bloque <span class="google-ui">Step 1</span> y marca <span class="google-ui">Has attachment</span>.</li>
+        </ul>
+
+        <span class="fase-titulo">Fase 3: Acción (Drive)</span>
+        <ul class="pasos-lista">
+            <li>Haz clic en <span class="google-ui">+ Add step</span> y elige <span class="google-ui">Add email attachments to Drive</span>.</li>
+            <li>En <span class="google-ui">Location</span>, selecciona tu carpeta de destino.</li>
+            <li>En <span class="google-ui">Gmail attachments</span>, usa <span class="google-ui">+ Variables</span> y elige las del Paso 1.</li>
+        </ul>
+    </div>
+
+    <div class="tutorial-flujo">
+        <h3 style="color: #2d3748; margin-top: 0;">📧 Flujo 2: Notificador con IA</h3>
+        <p><small>Recibe resúmenes de formularios por correo.</small></p>
+        
+        <span class="fase-titulo">Fase 1: Configurar Formulario</span>
+        <ul class="pasos-lista">
+            <li>Iniciador: Selecciona <span class="google-ui">When a form response comes in</span> y elige tu formulario.</li>
+        </ul>
+
+        <span class="fase-titulo">Fase 2: La IA Resumiendo</span>
+        <ul class="pasos-lista">
+            <li>Agrega paso: Busca <strong>AI actions</strong> y elige <span class="google-ui">Summarize</span>.</li>
+            <li>En <strong>Enter a prompt</strong> escribe: "Resume estas respuestas en viñetas".</li>
+        </ul>
+
+        <span class="fase-titulo">Fase 3: El Aviso</span>
+        <ul class="pasos-lista">
+            <li>Agrega paso: <span class="google-ui">Notify me by email</span> e inserta la variable del resumen.</li>
+        </ul>
+    </div>
+
+    <h2 style="color: var(--verde-oscuro);">📊 Paso 5: Gestiona tus flujos en "My Flows"</h2>
+    <div style="background: #edf2f7; padding: 20px; border-radius: 10px; display: flex; gap: 20px; align-items: center;">
+        <span style="font-size: 2.5rem;">📋</span>
+        <p style="margin: 0;">En la sección <strong>My flows</strong> del menú izquierdo puedes encender/apagar tus automatizaciones y revisar el historial de ejecución.</p>
+    </div>
+
+    <div class="entrega-final">
+        <h2 style="color: var(--verde-oscuro); margin-top: 0;">🎯 Tu Reto Final: El Entregable</h2>
+        <p>Aplica las <strong>3 R</strong>, usa tu <strong>Copiloto IA</strong> y construye tu solución real en <strong>Workspace Studio</strong>.</p>
+        <p><strong>Sube una captura de tu flujo activo para graduarte:</strong></p>
+        <a href="#" class="reto-btn" style="background: var(--verde-oscuro); display: inline-block; margin-top: 15px;">📤 Subir Captura de mi Automatización</a>
     </div>
 
     <div class="navegacion-modulos">
-        <a href="modulo3.html" class="btn-nav-secundario">⬅️ Anterior: Módulo 3</a>
-        <a href="cursos.html" class="btn-principal" style="margin-top: 0; background: var(--verde-oscuro);">✅ Finalizar Ruta</a>
+        <a href="modulo3.html" class="btn-nav-secundario">⬅️ Módulo 3</a>
+        <a href="cursos.html" class="btn-principal" style="margin-top: 0;">✅ Finalizar Ruta</a>
     </div>
-
 </div>
 
 <footer>&copy; 2026 Portal Interno Presta Innovation V</footer>
