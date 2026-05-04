@@ -50,3 +50,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }, Math.floor(Math.random() * 30000) + 15000);
     }
 });
+
+// ==========================================
+// SCRIPT: TARJETAS EXPANDIBLES (MARCO TRANSFORMACIÓN)
+// ==========================================
+function abrirPaso(elemento) {
+    // 1. Verificamos si la tarjeta que tocamos ya está abierta
+    const estaActiva = elemento.classList.contains('activo');
+    
+    // 2. Buscamos TODAS las tarjetas y las cerramos por defecto
+    const todasLasTarjetas = document.querySelectorAll('.paso-card-int');
+    todasLasTarjetas.forEach(tarjeta => {
+        tarjeta.classList.remove('activo');
+    });
+
+    // 3. Si la que tocamos NO estaba abierta, la abrimos. 
+    // Si ya estaba abierta, se quedará cerrada (funciona como interruptor).
+    if (!estaActiva) {
+        elemento.classList.add('activo');
+    }
+}
