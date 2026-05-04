@@ -117,53 +117,105 @@
         </div>
 
         <h2 style="text-align: center; color: var(--verde-oscuro); border-bottom: 2px solid var(--verde-primario); padding-bottom: 10px; margin-top: 60px; margin-bottom: 20px;">El Marco de Transformación (Paso a Paso)</h2>
-        <p style="text-align: center; color: #555; margin-bottom: 40px;">Basado en el modelo oficial de Google, todo proyecto exitoso sigue estas 5 fases. No necesitas ser un experto, solo sigue esta guía:</p>
+        <p style="text-align: center; color: #555; margin-bottom: 40px;">Toca cada caja para descubrir los detalles de las 5 fases del modelo oficial de Google:</p>
 
-        <div class="pasos-grid">
-            <div class="paso-card">
-                <div class="paso-numero-flotante">1</div>
-                <h4>🪄 Encuentra tu "Dolor"</h4>
-                <em>Fase: Inspirar y Contextualizar</em>
-                <p>El objetivo no es usar tecnología, sino resolver un problema real.</p>
-                <p><strong>🎯 Qué abarcar:</strong> Identifica tareas que cumplan con las "3 R": Repetitivas, Rutinarias y con Reglas claras.</p>
-                <p><strong>✅ Acción:</strong> Haz una lista de las tareas que más tiempo te quitan y que consistan básicamente en "mover datos" (ej. copiar de un PDF a un Excel).</p>
-            </div>
+        <div class="pasos-interactivos-grid">
             
-            <div class="paso-card">
-                <div class="paso-numero-flotante">2</div>
-                <h4>📋 Revisa tus "Ingredientes"</h4>
-                <em>Fase: Evaluación y Datos</em>
-                <p>La automatización es como una receta: si los ingredientes son malos, el resultado también.</p>
-                <p><strong>🎯 Qué abarcar:</strong> ¿Tus datos están en digital? ¿El proceso sigue siempre los mismos pasos o depende del criterio humano?</p>
-                <p><strong>✅ Acción:</strong> Asegúrate de que no haya papel de por medio. Si hay muchas excepciones en el proceso, aún no es momento de automatizar.</p>
+            <div class="paso-card-int" onclick="abrirPaso(this)">
+                <div class="paso-cabecera">
+                    <div class="paso-num-int">1</div>
+                    <div class="paso-titulo-grupo">
+                        <h4>🪄 Encuentra tu "Dolor"</h4>
+                        <span>Inspirar y Contextualizar</span>
+                    </div>
+                    <div class="paso-icono-toggle">➕</div>
+                </div>
+                <div class="paso-contenido">
+                    <div class="paso-contenido-inner">
+                        <hr style="border: 0; border-top: 1px dashed #e2e8f0; margin-top: 0; margin-bottom: 15px;">
+                        <p>El objetivo no es usar tecnología, sino resolver un problema real.</p>
+                        <p><strong>🎯 Qué abarcar:</strong> Identifica tareas que cumplan con las "3 R": Repetitivas, Rutinarias y con Reglas claras.</p>
+                        <p><strong>✅ Acción:</strong> Haz una lista de las tareas que más tiempo te quitan y que consistan básicamente en "mover datos" (ej. copiar de un PDF a un Excel).</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="paso-card">
-                <div class="paso-numero-flotante">3</div>
-                <h4>🧪 Haz una Prueba Pequeña</h4>
-                <em>Fase: Experimentación</em>
-                <p>No intentes automatizar todo el departamento de golpe. Empieza poco a poco.</p>
-                <p><strong>🎯 Qué abarcar:</strong> Selecciona un solo paso del proceso que sea crítico pero sencillo de abordar.</p>
-                <p><strong>✅ Acción:</strong> Crea un "Prototipo" en una semana (ej. lograr que al llegar un correo con una palabra clave, se guarde el adjunto en Drive).</p>
+            <div class="paso-card-int" onclick="abrirPaso(this)">
+                <div class="paso-cabecera">
+                    <div class="paso-num-int">2</div>
+                    <div class="paso-titulo-grupo">
+                        <h4>📋 Revisa los "Ingredientes"</h4>
+                        <span>Evaluación y Datos</span>
+                    </div>
+                    <div class="paso-icono-toggle">➕</div>
+                </div>
+                <div class="paso-contenido">
+                    <div class="paso-contenido-inner">
+                        <hr style="border: 0; border-top: 1px dashed #e2e8f0; margin-top: 0; margin-bottom: 15px;">
+                        <p>La automatización es como una receta: si los ingredientes son malos, el resultado también.</p>
+                        <p><strong>🎯 Qué abarcar:</strong> ¿Tus datos están en digital? ¿El proceso sigue siempre los mismos pasos o depende del criterio humano?</p>
+                        <p><strong>✅ Acción:</strong> Asegúrate de que no haya papel de por medio. Si hay muchas excepciones en el proceso, aún no es momento de automatizar.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="paso-card">
-                <div class="paso-numero-flotante">4</div>
-                <h4>🚀 Construye y Lanza</h4>
-                <em>Fase: Despliegue y Optimización</em>
-                <p>Usa las herramientas que ya tienes a la mano para darle vida a tu idea.</p>
-                <p><strong>🎯 Qué abarcar:</strong> Elegir la herramienta adecuada (¿Es una App móvil? ¿Un chatbot? ¿Un formulario?).</p>
-                <p><strong>✅ Acción:</strong> Con apoyo del COE, utiliza plataformas como AppSheet o Google Gems para que tu equipo empiece a usar la solución en su día a día.</p>
+            <div class="paso-card-int" onclick="abrirPaso(this)">
+                <div class="paso-cabecera">
+                    <div class="paso-num-int">3</div>
+                    <div class="paso-titulo-grupo">
+                        <h4>🧪 Haz una Prueba Pequeña</h4>
+                        <span>Experimentación</span>
+                    </div>
+                    <div class="paso-icono-toggle">➕</div>
+                </div>
+                <div class="paso-contenido">
+                    <div class="paso-contenido-inner">
+                        <hr style="border: 0; border-top: 1px dashed #e2e8f0; margin-top: 0; margin-bottom: 15px;">
+                        <p>No intentes automatizar todo el departamento de golpe. Empieza poco a poco.</p>
+                        <p><strong>🎯 Qué abarcar:</strong> Selecciona un solo paso del proceso que sea crítico pero sencillo de abordar.</p>
+                        <p><strong>✅ Acción:</strong> Crea un "Prototipo" en una semana (ej. lograr que al llegar un correo con una palabra clave, se guarde el adjunto en Drive).</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="paso-card">
-                <div class="paso-numero-flotante">5</div>
-                <h4>🛡️ Mide y Cuida tu Solución</h4>
-                <em>Fase: Sostenibilidad</em>
-                <p>Recuerda la regla de oro: lo que no se mide, no se mejora.</p>
-                <p><strong>🎯 Qué abarcar:</strong> ¿Cuánto tiempo ahorramos realmente? ¿El equipo se siente más cómodo?</p>
-                <p><strong>✅ Acción:</strong> Revisa una vez al mes si todo sigue funcionando y pide feedback. Si el proceso cambia en la vida real, ¡la automatización debe actualizarse!</p>
+            <div class="paso-card-int" onclick="abrirPaso(this)">
+                <div class="paso-cabecera">
+                    <div class="paso-num-int">4</div>
+                    <div class="paso-titulo-grupo">
+                        <h4>🚀 Construye y Lanza</h4>
+                        <span>Despliegue y Optimización</span>
+                    </div>
+                    <div class="paso-icono-toggle">➕</div>
+                </div>
+                <div class="paso-contenido">
+                    <div class="paso-contenido-inner">
+                        <hr style="border: 0; border-top: 1px dashed #e2e8f0; margin-top: 0; margin-bottom: 15px;">
+                        <p>Usa las herramientas que ya tienes a la mano para darle vida a tu idea.</p>
+                        <p><strong>🎯 Qué abarcar:</strong> Elegir la herramienta adecuada (¿Es una App móvil? ¿Un chatbot? ¿Un formulario?).</p>
+                        <p><strong>✅ Acción:</strong> Con apoyo del COE, utiliza plataformas como AppSheet o Google Gems para que tu equipo empiece a usar la solución en su día a día.</p>
+                    </div>
+                </div>
             </div>
+
+            <div class="paso-card-int" onclick="abrirPaso(this)">
+                <div class="paso-cabecera">
+                    <div class="paso-num-int">5</div>
+                    <div class="paso-titulo-grupo">
+                        <h4>🛡️ Mide tu Solución</h4>
+                        <span>Sostenibilidad</span>
+                    </div>
+                    <div class="paso-icono-toggle">➕</div>
+                </div>
+                <div class="paso-contenido">
+                    <div class="paso-contenido-inner">
+                        <hr style="border: 0; border-top: 1px dashed #e2e8f0; margin-top: 0; margin-bottom: 15px;">
+                        <p>Recuerda la regla de oro: lo que no se mide, no se mejora.</p>
+                        <p><strong>🎯 Qué abarcar:</strong> ¿Cuánto tiempo ahorramos realmente? ¿El equipo se siente más cómodo?</p>
+                        <p><strong>✅ Acción:</strong> Revisa una vez al mes si todo sigue funcionando y pide feedback. Si el proceso cambia, ¡la automatización debe actualizarse!</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
         
         <div class="seccion-coe">
