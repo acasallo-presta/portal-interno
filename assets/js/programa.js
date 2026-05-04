@@ -52,19 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// SCRIPT: ABRIR PASOS
+// SCRIPT: TARJETAS EXPANDIBLES (CORREGIDO)
 // ==========================================
-
 function abrirPaso(elemento) {
-    const estaActiva = elemento.classList.contains('activo');
+    // 1. Verificar si la tarjeta que tocamos ya está abierta
+    const yaEstaActiva = elemento.classList.contains('activo');
     
-    // Cerrar todas las demás para mantener orden
+    // 2. BUSCAR TODAS las tarjetas y quitarles la clase 'activo'
+    // Esto asegura que si hay otra abierta, se cierre (Efecto Acordeón)
     document.querySelectorAll('.paso-card-int').forEach(tarjeta => {
         tarjeta.classList.remove('activo');
     });
 
-    // Abrir solo si no estaba activa
-    if (!estaActiva) {
+    // 3. Si la tarjeta NO estaba activa, ahora la activamos
+    // Si ya estaba activa, el paso anterior ya la cerró
+    if (!yaEstaActiva) {
         elemento.classList.add('activo');
     }
 }
