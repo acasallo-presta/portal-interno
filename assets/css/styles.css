@@ -649,14 +649,13 @@ footer {
 .paso-contenido {
     max-height: 0;
     opacity: 0;
-    transition: all 0.4s ease-in-out;
-    background: #fcfcfc;
+    overflow: hidden; /* Evita que el texto se vea mientras está cerrado */
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
 }
 
 .paso-card-int.activo .paso-contenido {
-    max-height: 500px;
+    max-height: 500px; /* Altura suficiente para el texto */
     opacity: 1;
-    border-top: 1px solid #eee;
 }
 
 .paso-contenido-inner {
