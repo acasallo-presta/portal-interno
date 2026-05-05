@@ -1448,3 +1448,59 @@ nav a.activo {
     transform: scale(1.05);
     box-shadow: 0 8px 30px rgba(0, 203, 117, 0.6);
 }
+
+/* Nuevo contenedor para agrupar Cronómetro + Cupos + Botón */
+.fomo-grid-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas principales */
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+/* Columna derecha que agrupa Cupos y Botón */
+.fomo-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Botón Ultra-Llamativo */
+.btn-fomo-hero {
+    width: 100%;
+    background: var(--verde-primario);
+    color: var(--verde-oscuro) !important;
+    font-size: 1.4rem;
+    font-weight: 800;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 203, 117, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse-glow 2s infinite;
+}
+
+.btn-fomo-hero:hover {
+    transform: scale(1.02);
+    background: #00ff91;
+    box-shadow: 0 0 30px rgba(0, 203, 117, 0.6);
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 15px rgba(0, 203, 117, 0.4); }
+    50% { box-shadow: 0 0 35px rgba(0, 203, 117, 0.7); }
+    100% { box-shadow: 0 0 15px rgba(0, 203, 117, 0.4); }
+}
+
+/* Ajuste para que en móviles se vea uno debajo de otro */
+@media (max-width: 850px) {
+    .fomo-grid-main {
+        grid-template-columns: 1fr;
+    }
+}
